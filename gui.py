@@ -1,12 +1,16 @@
 import tkinter as tk
-import pydealer
+# import pydealer
 from models.card import SUIT_SYMBOLS, RANK_SYMBOLS
+from game.game import Game
 
 def start_gui():
     # generate a deck and deal hand:
-    deck = pydealer.Deck()
-    deck.shuffle()
-    hand = deck.deal(10)
+    # deck = pydealer.Deck()
+    # deck.shuffle()
+    # hand = deck.deal(10)
+
+    game = Game()
+    game.deal()
 
     # TKInter window:
     root = tk.Tk()
@@ -19,12 +23,29 @@ def start_gui():
                      bg="darkgreen", fg="white")
     title.pack(pady=10)
 
+    # card piles:
+    piles_frame = tk.Frame(root, bg="darkgreen")
+    piles_frame.pack(pady=20)
+
+    draw_label = tk.Label(piles_frame, text="🂠",
+                          font=("Arial", 28, "bold"), fg="white",
+                          bg="navy", width=4, height=3,
+                          relief="raised", borderwidth=2)
+    draw_label.pack(side="left", padx=20)
+
+    top_discard = game.get_top_discard()
+
+    # player hand:
+    hand_label = tk.Label(root, text="Your Hand", font=("Arial", 16),
+                          bg="darkgreen", fg="white")
+    hand_label.pack(pady=(20, 5))
+
     # hand frame:
     hand_frame = tk.Frame(root, bg="darkgreen")
     hand_frame.pack(pady=20)
 
     # display the cards:
-    for card in hand:
+    for card in game.player_hand:
         suit_sym = SUIT_SYMBOLS[card.suit]
         rank_sym = RANK_SYMBOLS[card.value]
         color = "red" if card.suit in ["Hearts", "Diamonds"] else "black"
