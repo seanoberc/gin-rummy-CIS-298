@@ -14,3 +14,8 @@ RANK_ORDER = {
     "Jack": 11, "Queen": 12, "King": 13
 }
 
+def get_value(card):
+    return VALUES[card.value]
+
+def get_rank_order(card):
+    return RANK_ORDER[card.value]
