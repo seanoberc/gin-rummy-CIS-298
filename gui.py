@@ -1,5 +1,6 @@
 import tkinter as tk
 import pydealer
+from models.card import SUIT_SYMBOLS, RANK_SYMBOLS
 
 def start_gui():
     # generate a deck and deal hand:
@@ -24,10 +25,12 @@ def start_gui():
 
     # display the cards:
     for card in hand:
+        suit_sym = SUIT_SYMBOLS[card.suit]
+        rank_sym = RANK_SYMBOLS[card.value]
         color = "red" if card.suit in ["Hearts", "Diamonds"] else "black"
         card_label = tk.Label(
             hand_frame,
-            text=f"{card.value}\nof\n{card.suit}",
+            text=f"{rank_sym}\n\n{suit_sym}",
             font=("Arial", 10, "bold"),
             fg=color,
             bg="white",
