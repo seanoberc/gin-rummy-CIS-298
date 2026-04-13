@@ -45,7 +45,6 @@ class GinRummyGUI:
 
     # draw piles
     def draw_piles(self):
-
         # face-down draw pile:
         self.draw_pile_x, self.draw_pile_y = 350, 150
 
@@ -68,3 +67,29 @@ class GinRummyGUI:
         )
 
         # face-up discard pile:
+        self.dixcard_x, self.dicard_y = 490, 150
+        self.draw_discard_top()
+        self.canvas.create_text(
+            self.discard_x + CARD_WIDTH // 2,
+            self.discard_y + CARD_HEIGHT + 15,
+            text="Discard", font=("Arial", 12), fill="white"
+        )
+
+    def draw_discard_top(self):
+        self.canvas.delete("discard_card")
+        top = self.game.get_top_discard()
+        self.draw_card_at(self.discard_x, self.discard_y, top, "discard_card")
+
+    def draw_hand(self):
+        self.canvas.delete("card")      # deletes existing card graphics from the canvas before redrawing
+        self.canvas.delete("card_text")
+
+        # set positions by pixel:
+        start_x = 120
+        y = 400
+
+        # enumerate gives index and value for list iteration:
+        #   for loop determines card spacing on table
+        for i, card in enumerate(self.game.player_hand):
+            x = start_x + i * (CARD_WIDTH + 8)
+            self.draw_card_at(x, y, card, "card")
