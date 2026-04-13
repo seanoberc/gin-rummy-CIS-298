@@ -34,6 +34,13 @@ def start_gui():
     draw_label.pack(side="left", padx=20)
 
     top_discard = game.get_top_discard()
+    discard_color = "red" if top_discard.suit in ["Hearts", "Diamonds"] else "black"
+    discard_label = tk.Label(piles_frame,
+                             text=f"{RANK_SYMBOLS[top_discard.value]}\n{SUIT_SYMBOLS[top_discard.suit]}",
+                             font=("Arial", 18, "bold"), fg=discard_color,
+                             bg="white", width=4, height=3,
+                             relief="raised", borderwidth=2)
+    discard_label.pack(side="left", padx=20)
 
     # player hand:
     hand_label = tk.Label(root, text="Your Hand", font=("Arial", 16),
