@@ -1,3 +1,5 @@
+from gui import start_gui
+
 def print_menu():
     print("\t\tGIN RUMMY\t\t")
     print("\t1. New Game")
@@ -9,7 +11,7 @@ def main():
         print_menu()
         choice = input("> ").strip()
         if choice == "1":
-            print("Starting game...")
+            start_gui()
         elif choice == "2":
             print("Print the rules here...")
         elif choice == "3":
