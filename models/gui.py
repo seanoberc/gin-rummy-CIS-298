@@ -1,4 +1,5 @@
 import tkinter as tk
+import pydealer
 from models.card import SUIT_SYMBOLS, RANK_SYMBOLS
 from game.game import Game
 
@@ -11,7 +12,7 @@ class GinRummyGUI:
         self.game = Game()
         self.game.deal()
 
-        self.root.tk.Tk()
+        self.root = tk.Tk()
         self.root.title("Gin Rummy")
         self.root.geometry("900x600")
 
@@ -67,7 +68,7 @@ class GinRummyGUI:
         )
 
         # face-up discard pile:
-        self.dixcard_x, self.dicard_y = 490, 150
+        self.discard_x, self.dicard_y = 490, 150
         self.draw_discard_top()
         self.canvas.create_text(
             self.discard_x + CARD_WIDTH // 2,
@@ -93,3 +94,78 @@ class GinRummyGUI:
         for i, card in enumerate(self.game.player_hand):
             x = start_x + i * (CARD_WIDTH + 8)
             self.draw_card_at(x, y, card, "card")
+
+    def draw_card_at(self, x, y, card, tag):
+        color = "red" if card.suit in ["Hearts", "Diamonds"] else "black"
+        rank_sym = RANK_SYMBOLS[card.value]
+        suit_sym = SUIT_SYMBOLS[card.suit]
+
+        rect = self.canvas.create_rectangle(
+            x, y, x + CARD_WIDTH, y + CARD_HEIGHT,
+            fill="white", outline="gray", width=2, tags=tag
+        )
+        text = self.canvas.create_text(
+            x + CARD_WIDTH // 2, y + CARD_HEIGHT // 2,
+            text=f"{rank_sym}\n{suit_sym}",
+            font=("Arial", 16, "bold"), fill=color, tags=tag
+        )
+
+        # store card data on both the rect and text
+        self.canvas.itemconfig(rect, tags=(tag, f"carddata_{card.value}_of_{card.suit}"))
+        self.canvas.itemconfig(text, tags=(tag, f"carddata_{card.value}_of_{card.suit}"))
+
+    def on_card_press(self, event):
+        item = self.canvas.find_closest(event.x, event.y)[0]
+        tags = self.canvas.gettags(item)
+
+        # find the carddata tag
+        card_tag = [t for t in tags if t.startswith("carddata_")]
+        if not card_tag:
+            return
+
+        # find all canvas items with this card's tag
+        self.drag_data["cards"] = self.canvas.find_withtag(card_tag[0])
+        self.drag_data["x"] = event.x
+        self.drag_data["y"] = event.y
+
+    def on_card_drag(self, event):
+        if not self.drag_data["cards"]:
+            return
+        dx = event.x - self.drag_data["x"]
+        dy = event.y - self.drag_data["y"]
+
+        for item in self.drag_data["cards"]:
+            self.canvas.move(item, dx, dy)
+            self.canvas.tag_raise(item)
+
+        self.drag_data["x"] = event.x
+        self.drag_data["y"] = event.y
+
+    def on_card_release(self, event):
+        if not self.drag_data["cards"]:
+            return
+
+        # check if dropped on discard pile
+        if (self.discard_x <= event.x <= self.discard_x + CARD_WIDTH and
+                self.discard_y <= event.y <= self.discard_y + CARD_HEIGHT):
+
+            # find which card was dragged
+            tags = self.canvas.gettags(self.drag_data["cards"][0])
+            card_tag = [t for t in tags if t.startswith("carddata_")][0]
+            card_str = card_tag.replace("carddata_", "").replace("_", " ")
+
+            # find and discard the card
+            for card in self.game.player_hand:
+                if f"{card.value} of {card.suit}" == card_str:
+                    self.game.player_hand.get(card.value + " of " + card.suit)
+                    self.game.discard_pile.add(pydealer.Stack(cards=[card]))
+                    break
+
+            self.draw_discard_top()
+
+        # redraw hand (snaps back if not discarded)
+        self.draw_hand()
+        self.drag_data = {"item": None, "x": 0, "y": 0, "cards": []}
+
+def start_gui():
+    GinRummyGUI()
