@@ -14,15 +14,16 @@ class Game:
         self.ai_hand = self.deck.deal(10)
 
         # flip one card to begin the discard pile:
-        self.discard_pile.add(self.deck.deal(1))
+        card = self.deck.deal(1)[0]
+        self.discard_pile.add(card)
 
     # TODO: func draw()
     def get_top_discard(self):
-        return self.discard_pile[-1]
+        return self.discard_pile[-1] if len(self.discard_pile) else None
 
     # TODO: func discard()
     def draw_from_deck(self):
-        return self.deck.deal(1)
+        return self.deck.deal(1)[0]
 
     def discard(self, card):
         self.discard_pile.add(card)

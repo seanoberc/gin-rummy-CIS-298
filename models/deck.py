@@ -1,13 +1,33 @@
 import pydealer
 
-# class Deck():
-#
-#     def __init__(self):
-#
+class Deck:
+    def __init__(self):
+        self.deck = pydealer.Deck()
+        self.deck.shuffle()
+        self.discard = pydealer.Stack()
 
-deck = pydealer.Deck()
-deck.shuffle()
-hand = deck.deal(10)
+    def deal(self, n):
+        return self.deck.deal(n)
 
-# for card in hand:
-#     printcard)
+    def draw_card(self):
+        return self.deck.deal(1)[0]
+
+    def top_discard(self):
+        if len(self.discard) > 0:
+            return self.discard[-1]
+        else:
+            return None
+
+    def take_discard(self):
+        if len(self.discard) == 0:
+            return None
+        top = self.discard[-1]
+        taken = self.discard.get(str(top))
+        return list(taken)[0]
+
+
+    def discard_card(self, card):
+        self.discard.add(card)
+
+
+
