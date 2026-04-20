@@ -68,7 +68,7 @@ class GinRummyGUI:
         )
 
         # face-up discard pile:
-        self.discard_x, self.dicard_y = 490, 150
+        self.discard_x, self.discard_y = 490, 150
         self.draw_discard_top()
         self.canvas.create_text(
             self.discard_x + CARD_WIDTH // 2,
