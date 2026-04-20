@@ -122,8 +122,6 @@ player.set_hand(hand)
 
 deck.discard_card(deck.draw_card())
 
-
-
 images = load_card_images(player.hand)
 
 for k in list(images.keys()):
