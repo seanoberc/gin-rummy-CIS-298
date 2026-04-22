@@ -65,7 +65,7 @@ def stack_size(stack):
 
 def draw_stacks_in_bin(screen, stacks, bin_rect, images):
     x = bin_rect.x + 10
-    y = bin_rect.y + 10
+    y = bin_rect.y + 40
     line_h = CARD_HEIGHT
 
     for stack in stacks:
