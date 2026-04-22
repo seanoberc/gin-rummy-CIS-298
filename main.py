@@ -7,7 +7,7 @@ from players.player import Player
 
 pygame.init()
 label_font = pygame.font.SysFont(None, 32)
-screen = pygame.display.set_mode((1280,720))
+screen = pygame.display.set_mode((1920,1080))
 clock = pygame.time.Clock()
 
 CARD_WIDTH = 80
@@ -17,17 +17,32 @@ SPACING = 55
 STACK_X_SPACING = 20
 STACK_Y_SPACING = 25
 STACK_GAP = 25
+MARGIN = 40
+GAP = 25
+LEFT_WIDTH = 520
+BIN_HEIGHT = 220
+PILE_GAP = 40
+DEADWOOD_HEIGHT = 260
+WIDTH = screen.get_width()
+HEIGHT = screen.get_height()
 
-DECK_RECT = pygame.Rect(1000, 220, CARD_WIDTH, CARD_HEIGHT)
+
+
+DECK_RECT = pygame.Rect(0, 0, CARD_WIDTH, CARD_HEIGHT)
 deck_img = pygame.image.load("deck_of_cards_blue.png")
 deck_img = pygame.transform.smoothscale(deck_img, (CARD_WIDTH, CARD_HEIGHT))
 
-DISCARD_RECT = pygame.Rect(0, 220, CARD_WIDTH, CARD_HEIGHT)
-DISCARD_RECT.centerx = screen.get_width() // 2
+RUNS_BIN = pygame.Rect(MARGIN, MARGIN, LEFT_WIDTH, BIN_HEIGHT)
+SETS_BIN = pygame.Rect(MARGIN, RUNS_BIN.bottom, LEFT_WIDTH, BIN_HEIGHT)
 
-RUNS_BIN = pygame.Rect(80, 120, 450, 250)
-SETS_BIN = pygame.Rect(80, 370, 450, 260)
-DEADWOOD_BIN = pygame.Rect(600, 420, 600, 250)
+DISCARD_RECT = pygame.Rect(0, 0, CARD_WIDTH, CARD_HEIGHT)
+
+DEADWOOD_BIN = pygame.Rect(MARGIN, HEIGHT - MARGIN - DEADWOOD_HEIGHT, WIDTH - 2 * MARGIN, DEADWOOD_HEIGHT)
+
+y_piles = (RUNS_BIN.bottom + SETS_BIN.top)
+
+DISCARD_RECT.center = (WIDTH // 2 - (CARD_WIDTH // 2 + PILE_GAP // 2), y_piles)
+DECK_RECT.center    = (WIDTH // 2 + (CARD_WIDTH // 2 + PILE_GAP // 2), y_piles)
 
 def deadwood_slot_rect(i,n):
     x0 = DEADWOOD_BIN.x + 10
@@ -88,7 +103,7 @@ def draw_stacks_in_bin(screen, stacks, bin_rect, images):
 def bin_card_rects(stacks, bin_rect):
     rects = []
     x = bin_rect.x + 10
-    y = bin_rect.y + 10
+    y = bin_rect.y + 40
     line_h = CARD_HEIGHT
 
     for si, stack in enumerate(stacks):
