@@ -1,4 +1,4 @@
-from gui import start_gui
+from views.gui import start_gui
 
 def print_menu():
     print("\t\tGIN RUMMY\t\t")
