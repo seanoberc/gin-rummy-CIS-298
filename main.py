@@ -1,106 +1,21 @@
-import pygame
+from views.gui import start_gui
 
-from models.card_sprite import load_card_images, card_file
-from models.deck import Deck
-from players.player import Player
+def print_menu():
+    print("\t\tGIN RUMMY\t\t")
+    print("\t1. New Game")
+    print("\t2. Rules")
+    print("\t3. Quit")
 
-
-pygame.init()
-label_font = pygame.font.SysFont(None, 32)
-screen = pygame.display.set_mode((1280,720))
-clock = pygame.time.Clock()
-
-CARD_WIDTH = 80
-CARD_HEIGHT = 120
-HAND_POS = 520
-SPACING = 55
-STACK_X_SPACING = 20
-STACK_Y_SPACING = 25
-STACK_GAP = 25
-
-DECK_RECT = pygame.Rect(1000, 220, CARD_WIDTH, CARD_HEIGHT)
-deck_img = pygame.image.load("deck_of_cards_blue.png")
-deck_img = pygame.transform.smoothscale(deck_img, (CARD_WIDTH, CARD_HEIGHT))
-
-DISCARD_RECT = pygame.Rect(0, 220, CARD_WIDTH, CARD_HEIGHT)
-DISCARD_RECT.centerx = screen.get_width() // 2
-
-RUNS_BIN = pygame.Rect(80, 120, 450, 250)
-SETS_BIN = pygame.Rect(80, 370, 450, 260)
-DEADWOOD_BIN = pygame.Rect(600, 420, 600, 250)
-
-def deadwood_slot_rect(i,n):
-    x0 = DEADWOOD_BIN.x + 10
-    y0 = DEADWOOD_BIN.y + (DEADWOOD_BIN.height - CARD_HEIGHT) // 2
-
-    max_w = DEADWOOD_BIN.width - 20
-    spacing = SPACING
-    if n > 1:
-        max_spacing = (max_w - CARD_WIDTH) / (n - 1)
-        spacing = min(SPACING, max(10,int(max_spacing)))
-    return pygame.Rect(x0 + i * spacing, y0, CARD_WIDTH, CARD_HEIGHT)
-def deadwood_drop_index(mx, n):
-    x0 = DEADWOOD_BIN.x + 10
-    max_w = DEADWOOD_BIN.width - 20
-
-    spacing = SPACING
-    if n > 1:
-        max_spacing = (max_w - CARD_WIDTH) / (n - 1)
-        spacing = min(SPACING, max(10,int(max_spacing)))
-    i = int((mx - x0) / spacing)
-    return max(0, min(i, n - 1))
-
-def hand_index_at(mx, my, player):
-    n = len(player.hand)
-    for i in range(n - 1, -1, -1):
-        if deadwood_slot_rect(i, n).collidepoint(mx, my):
-            return i
-    return None
-
-def stack_size(stack):
-    n = len(stack)
-    w = CARD_WIDTH + max(0, n - 1) * STACK_X_SPACING
-    h = CARD_HEIGHT
-    return w, h
-
-def draw_stacks_in_bin(screen, stacks, bin_rect, images):
-    x = bin_rect.x + 10
-    y = bin_rect.y + 10
-    line_h = CARD_HEIGHT
-
-    for stack in stacks:
-        if not stack:
-            continue
-        w,h = stack_size(stack)
-
-        if x + w > bin_rect.right - 10:
-            x = bin_rect.x + 10
-            y = y + line_h + STACK_Y_SPACING
-
-        if y + h > bin_rect.bottom - 10:
-            continue
-
-        for j, card in enumerate(stack):
-            screen.blit(images[str(card)], (x + j * STACK_X_SPACING, y))
-
-        x = x + w + STACK_GAP
-
-def bin_card_rects(stacks, bin_rect):
-    rects = []
-    x = bin_rect.x + 10
-    y = bin_rect.y + 10
-    line_h = CARD_HEIGHT
-
-    for si, stack in enumerate(stacks):
-        if not stack:
-            continue
-        w, h = stack_size(stack)
-
-        if x + w > bin_rect.right - 10:
-            x = bin_rect.x + 10
-            y = y + line_h + STACK_Y_SPACING
-
-        if y + h > bin_rect.bottom - 10:
+def main():
+    while True:
+        print_menu()
+        choice = input("> ").strip()
+        if choice == "1":
+            start_gui()
+        elif choice == "2":
+            print("Print the rules here...")
+        elif choice == "3":
+            print("Quitting game...")
             break
 
         for ci, card in enumerate(stack):

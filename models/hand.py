@@ -9,6 +9,7 @@ class Hand:
 
     def remove(self, card):
         return self.cards.get(str(card))
+        self.cards.get(card.value + " of " + card.suit)
 
     def size(self):
         return self.cards.size
