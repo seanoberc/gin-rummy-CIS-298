@@ -1,5 +1,4 @@
 import pydealer
-from models.card import SUIT_SYMBOLS, RANK_SYMBOLS
 
 class Hand:
     def __init__(self):
@@ -9,6 +8,7 @@ class Hand:
         self.cards.add(cards)
 
     def remove(self, card):
+        return self.cards.get(str(card))
         self.cards.get(card.value + " of " + card.suit)
 
     def size(self):
