@@ -1,5 +1,3 @@
-import pygame
-
 CARD_WIDTH = 80
 CARD_HEIGHT = 110
 HAND_SPACING = 90
