@@ -24,4 +24,15 @@ class BinView:
 
     # draw runs-bin:
     def draw(self):
-        
+        pygame.draw.rect(self.screen, BIN_BORDER_COLOR, self.runs_rect, 2)
+        runs_label = self.font.render("RUNS", True, BIN_LABEL_COLOR)
+        self.screen.blit(runs_label, (self.runs_rect.x + 10, self.runs_rect.y + 8))
+
+        # draw sets-bin:
+        pygame.draw.rect(self.screen, BIN_BORDER_COLOR, self.sets_rect, 2)
+        sets_label = self.font.render("SETS", True, BIN_LABEL_COLOR)
+        self.screen.blit(sets_label, (self.sets_rect.x + 10, self.sets_rect.y + 8))
+
+        # draw cards inside each bin:
+        self._draw_cards_in_bin(self.player.groups["runs"], self.runs_rect)
+        self._draw_cards_in_bin(self.player.groups["sets"], self.sets_rect)
