@@ -6,6 +6,7 @@ from views.pile_view import PileView
 from views.bin_view import BinView
 from views.button import Button
 from views.menu_view import MenuView
+from views.score_view import ScoreView
 
 WINDOW_WIDTH = 1280
 WINDOW_HEIGHT = 720
@@ -40,6 +41,7 @@ class App:
         self.hand_view = None
         self.pile_view = None
         self.bin_view = None
+        self.score_view = None
         self.knock_button = None
         self.gin_button = None
         self.all_sprites = None
@@ -72,6 +74,8 @@ class App:
         self.hand_view = HandView(WINDOW_HEIGHT, self.game.player)
         self.pile_view = PileView(self.screen, self.game.deck, WINDOW_WIDTH, WINDOW_HEIGHT)
         self.bin_view = BinView(self.screen, self.game.player)
+        self.score_view = ScoreView(self.screen, self.game.player, WINDOW_WIDTH)
+
         self.knock_button = Button(WINDOW_WIDTH - 220, WINDOW_HEIGHT - 80, 90, 40, "Knock")
         self.gin_button = Button(WINDOW_WIDTH - 120, WINDOW_HEIGHT - 80, 90, 40, "Gin!")
 
@@ -204,6 +208,7 @@ class App:
                 self.all_sprites.draw(self.screen)
                 self.pile_view.draw()
                 self.bin_view.draw(self.dragging_card)
+                self.score_view.draw()
                 self.knock_button.draw(self.screen)
                 self.gin_button.draw(self.screen)
                 pygame.display.flip()
