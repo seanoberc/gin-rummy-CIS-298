@@ -2,7 +2,7 @@ from models.deck import Deck
 from models.player import Player
 
 class Game:
-    def __init__(self):
+    def __init__(self, player_name="Human"):
         self.deck = Deck()
         self.player = Player("Human")
         self.phase = "draw"
