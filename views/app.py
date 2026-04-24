@@ -3,6 +3,7 @@ import pygame
 from game.game import Game
 from views.hand_view import HandView
 from views.pile_view import PileView
+from views.bin_view import BinView
 
 WINDOW_WIDTH = 1280
 WINDOW_HEIGHT = 720
@@ -32,11 +33,15 @@ class App:
         # views:
         self.hand_view = HandView(WINDOW_HEIGHT, self.game.player)
         self.pile_view = PileView(self.screen, self.game.deck, WINDOW_WIDTH, WINDOW_HEIGHT)
+        self.bin_view = BinView(self.screen, self.game.player)
 
         # add hand to Sprite Group and position it:
         for card in self.game.player.hand:
             self.all_sprites.add(card)
         self.hand_view.reposition()
+
+        self.screen.fill((0, 0, 0))
+        pygame.display.flip()
 
     # helper function to govern event handling:
     def _handle_events(self):
@@ -81,13 +86,24 @@ class App:
                 if self.dragging_card:
                     discard_rect = self.pile_view.discard_rect()
 
-                    if discard_rect.colliderect(self.dragging_card.rect):
+                    if self.bin_view.is_runs_drop(self.dragging_card.rect):
+                        self.game.player.move_to_group(self.dragging_card, "runs")
+                        self.all_sprites.remove(self.dragging_card)
+                        self.hand_view.reposition()
+
+                    elif self.bin_view.is_sets_drop(self.dragging_card.rect):
+                        self.game.player.move_to_group(self.dragging_card, "sets")
+                        self.all_sprites.remove(self.dragging_card)
+                        self.hand_view.reposition()
+
+                    elif discard_rect.colliderect(self.dragging_card.rect):
                         success = self.game.discard_card(self.dragging_card)
                         if success:
                             self.dragging_card.rect.x = discard_rect.x
                             self.dragging_card.rect.y = discard_rect.y
                             self.all_sprites.remove(self.dragging_card)
                             self.hand_view.reposition()
+
                     else:
                         old_index = self.game.player.hand.index(self.dragging_card)
                         new_index = self.hand_view.index_at(mx)
@@ -107,6 +123,7 @@ class App:
             self._draw_table()
             self.all_sprites.draw(self.screen)
             self.pile_view.draw()
+            self.bin_view.draw()
             pygame.display.flip()
             self.clock.tick(60)
 

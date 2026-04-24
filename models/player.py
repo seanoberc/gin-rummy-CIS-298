@@ -26,9 +26,10 @@ class Player:
         if card in self.hand:
             self.hand.remove(card) # if the card is already in the hand, remove it
 
-        # remove the card from any group that it's currently in:
-        for card in self.groups[name]:
-            self.groups[name].remove(card)
+        # remove from any group it's currently in
+        for name in ("runs", "sets"):
+            if card in self.groups[name]:
+                self.groups[name].remove(card)
 
         self.groups[group_name].append(card) # appends card to target group
 

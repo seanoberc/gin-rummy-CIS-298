@@ -36,3 +36,24 @@ class BinView:
         # draw cards inside each bin:
         self._draw_cards_in_bin(self.player.groups["runs"], self.runs_rect)
         self._draw_cards_in_bin(self.player.groups["sets"], self.sets_rect)
+
+    def _draw_cards_in_bin(self, cards, bin_rect):
+        # lay cards out left to right with slight overlap
+        for i, card in enumerate(cards):
+            card.rect.x = bin_rect.x + 10 + i * CARD_SPACING
+            card.rect.y = bin_rect.y + (bin_rect.height - CARD_HEIGHT) // 2
+            self.screen.blit(card.image, card.rect)
+
+    def card_at(self, mx, my):
+        """Return the card and its group name if the mouse is over a bin card."""
+        for group_name in ("runs", "sets"):
+            for card in reversed(self.player.groups[group_name]):
+                if card.rect.collidepoint(mx, my):
+                    return card, group_name
+        return None, None
+
+    def is_runs_drop(self, rect):
+        return self.runs_rect.colliderect(rect)
+
+    def is_sets_drop(self, rect):
+        return self.sets_rect.colliderect(rect)
