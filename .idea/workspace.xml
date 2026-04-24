@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2e52d4e6-8936-465a-b08b-cf391b971c8c" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/gin-rummy-CIS-298.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gin-rummy-CIS-298.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/game/game.py" beforeDir="false" afterPath="$PROJECT_DIR$/game/game.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/views/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/player.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/player.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
