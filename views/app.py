@@ -35,24 +35,27 @@ class App:
         # Pygame `Group` to hold all internal sprites used:
         self.all_sprites = pygame.sprite.Group()
 
+        # Game class now controls all state:
+        self.game = Game()
+
         # set up deck and player:
-        self.deck = Deck()
+        # self.deck = Deck()
         # hand = deck.deal(10)  # test deck
-        self.player = Player("Human")
-        self.player.set_hand(self.deck.deal(10))
+        # self.player = Player("Human")
+        # self.player.set_hand(self.deck.deal(10))
 
         # flip one card to begin discard pile:
-        self.deck.discard(self.deck.draw())
+        # self.deck.discard(self.deck.draw())
+
+        # draw and discard phases:
+        # self.phase = "draw"
 
         # load `Blue_card_back.png` image for the stockpile:
         stock_image = pygame.image.load("assets/images/Blue_card_back.png").convert_alpha()
         self.stock_image = pygame.transform.smoothscale(stock_image, (CARD_WIDTH, CARD_HEIGHT))
 
-        # draw and discard phases:
-        self.phase = "draw"
-
         # position the player hand:
-        for i, card in enumerate(self.player.hand):
+        for i, card in enumerate(self.game.player.hand):
             card.rect.x = 20 + i * HAND_SPACING
             card.rect.y = HAND_Y
             self.all_sprites.add(card)
@@ -75,30 +78,31 @@ class App:
                 mx, my = event.pos  # stores mouse cursor coords as tuple (mouse-x and mouse-y)
 
                 # draw phase; allows only drawing cards:
-                if self.phase == "draw":
+                if self.game.phase == "draw":
                     stock_rect = pygame.Rect(STOCK_X, CENTER_Y, CARD_WIDTH, CARD_HEIGHT)
                     if stock_rect.collidepoint(mx, my):
-                        card = self.deck.draw()
-                        self.player.add_card(card)
-                        card.rect.x = 20 + (len(self.player.hand) - 1) * HAND_SPACING
-                        card.rect.y = HAND_Y
-                        self.all_sprites.add(card)
-                        self.phase = "discard"
-                        return
+                        card = self.game.draw_from_stock()
+                        if card:
+                            # card.rect.x = 20 + (len(self.game.player.hand) - 1) * HAND_SPACING
+                            # card.rect.y = HAND_Y
+                            self.all_sprites.add(card)
+                            self._reposition_hand()
+                            return
 
-                    discard_rect = pygame.Rect(STOCK_X, CENTER_Y, CARD_WIDTH, CARD_HEIGHT)
-                    if discard_rect.collidepoint(mx, my) and self.deck.top_discard() is not None:
-                        card = self.deck.take_discard()
-                        self.player.add_card(card)
-                        card.rect.x = 20 + (len(self.player.hand) - 1) * HAND_SPACING
-                        card.rect.y = HAND_Y
-                        self.all_sprites.add(card)
-                        self.phase = "discard"
-                        return
+                    discard_rect = pygame.Rect(DISCARD_X, CENTER_Y, CARD_WIDTH, CARD_HEIGHT)
+                    if discard_rect.collidepoint(mx, my):
+                        card = self.game.draw_from_discard()
+                        if card:
+                            # card.rect.x = 20 + (len(self.game.player.hand) - 1) * HAND_SPACING
+                            # card.rect.y = HAND_Y
+                            self.all_sprites.add(card)
+                            self._reposition_hand()
+                            # self.phase = "discard"
+                            return
 
                 # discard phase; allows only dragging cards:
                 # elif self.phase == "discard":
-                for card in reversed(self.player.hand):
+                for card in reversed(self.game.player.hand):
                     if card.rect.collidepoint(mx, my):
                         self.dragging_card = card
                         self.drag_offset_x = mx - card.rect.x
@@ -132,24 +136,26 @@ class App:
 
             elif event.type == pygame.MOUSEBUTTONUP and event.button == 1:
                 mx, my = event.pos
-
                 if self.dragging_card:
                     # check if card is dropped on discard pile:
                     discard_rect = pygame.Rect(DISCARD_X, CENTER_Y, CARD_WIDTH, CARD_HEIGHT)
 
                     if discard_rect.collidepoint(self.dragging_card.rect.center):
-                        self.deck.discard(self.dragging_card)
-                        self.player.remove_card(self.dragging_card)
-                        self.all_sprites.remove(self.dragging_card)
-                        self.phase = "draw"
+                        success = self.game.discard_card(self.dragging_card)
+                        if success:
+                                self.all_sprites.remove(self.dragging_card)
+                        # self.deck.discard(self.dragging_card)
+                        # self.player.remove_card(self.dragging_card)
+                        # self.all_sprites.remove(self.dragging_card)
+                        # self.phase = "draw"
                     else:
-                        old_index = self.player.hand.index(self.dragging_card)
+                        old_index = self.game.player.hand.index(self.dragging_card)
                         new_index = self._hand_index_at(mx)
                         # i = self.player.hand.index(self.dragging_card)
                         # self.dragging_card.rect.x = 20 + i * HAND_SPACING
                         # self.dragging_card.rect.y = HAND_Y
-                        self.player.hand.pop(old_index)
-                        self.player.hand.insert(new_index, self.dragging_card)
+                        self.game.player.hand.pop(old_index)
+                        self.game.player.hand.insert(new_index, self.dragging_card)
                         self._reposition_hand()
 
                     self.dragging_card = None
@@ -158,10 +164,10 @@ class App:
     def _hand_index_at(self, mx):
         i = (mx - 20) // HAND_SPACING  # divide x-pos. by spacing to get slot index
         return max(0,
-                   min(i, len(self.player.hand) - 1))  # prevents position from going below 0 or going above last card
+                   min(i, len(self.game.player.hand) - 1))  # prevents position from going below 0 or going above last card
 
     def _reposition_hand(self):
-        for i, card in enumerate(self.player.hand):
+        for i, card in enumerate(self.game.player.hand):
             card.rect.x = 20 + i * HAND_SPACING
             card.rect.y = HAND_Y
 
@@ -174,15 +180,12 @@ class App:
         self.screen.blit(self.stock_image, (STOCK_X, CENTER_Y))
 
         # draw top of discard pile (face-up):
-        top = self.deck.top_discard()
+        top = self.game.deck.top_discard()
         if top is not None:
             self.screen.blit(top.image, (DISCARD_X, CENTER_Y))
 
     def run(self):
         while self.running:
-            # for event in pygame.event.get():
-            #     if event.type == pygame.QUIT:
-            #         self.running = False
             self._handle_events()
 
             # render objects:
