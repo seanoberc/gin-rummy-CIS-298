@@ -39,6 +39,17 @@ class Card(pygame.sprite.Sprite):
 
     def __repr__(self):
         return f"{self.rank} of {self.suit}"
+
+    @property
+    def point_val(self):
+        if self.rank in ("Jack", "Queen", "King"):
+            return 10
+        elif self.rank == "Ace":
+            return 1
+        else:
+            return int(self.rank)
+
+
     #
     # def _draw_card(self):
     #     font = pygame.font.SysFont("applesymbols", 18)

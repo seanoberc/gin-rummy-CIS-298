@@ -1,7 +1,4 @@
 import pygame
-from pygame.examples.setmodescale import screen
-
-from models.deck import Deck
 
 CARD_WIDTH = 80
 CARD_HEIGHT = 110
@@ -13,7 +10,7 @@ class PileView:
 
         # calculate center of card table:
         self.center_y = window_height // 2 - CARD_HEIGHT // 2
-        self.stock_x = window_width // 2 - CARD_HEIGHT - 20
+        self.stock_x = window_width // 2 - CARD_WIDTH - 20
         self.discard_x = window_width // 2 + 20
 
         # load card-back image for stockpile:

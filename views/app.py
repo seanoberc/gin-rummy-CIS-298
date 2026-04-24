@@ -4,6 +4,7 @@ from game.game import Game
 from views.hand_view import HandView
 from views.pile_view import PileView
 from views.bin_view import BinView
+from views.button import Button
 
 WINDOW_WIDTH = 1280
 WINDOW_HEIGHT = 720
@@ -33,6 +34,10 @@ class App:
         self.hand_view = HandView(WINDOW_HEIGHT, self.game.player)
         self.pile_view = PileView(self.screen, self.game.deck, WINDOW_WIDTH, WINDOW_HEIGHT)
         self.bin_view = BinView(self.screen, self.game.player)
+
+        # knock and gin buttons
+        self.knock_button = Button(WINDOW_WIDTH - 220, WINDOW_HEIGHT - 80, 90, 40, "Knock")
+        self.gin_button = Button(WINDOW_WIDTH - 120, WINDOW_HEIGHT - 80, 90, 40, "Gin!")
 
         # add hand to Sprite Group and position it:
         for card in self.game.player.hand:
@@ -138,6 +143,7 @@ class App:
             if event.type == pygame.QUIT:
                 self.running = False
 
+            # MOUSEBUTTON_DOWN
             elif event.type == pygame.MOUSEBUTTONDOWN and event.button == 1:
                 mx, my = event.pos
 
@@ -173,12 +179,19 @@ class App:
                         self.drag_offset_y = my - card.rect.y
                         self.all_sprites.add(card)
 
+                if self.knock_button.is_clicked(mx, my):
+                    print("Knock!")  # TODO: placeholder for now
+
+                if self.gin_button.is_clicked(mx, my):
+                    print("Gin!")  # TODO: placeholder for now
+
             elif event.type == pygame.MOUSEMOTION:
                 if self.dragging_card:
                     mx, my = event.pos
                     self.dragging_card.rect.x = mx - self.drag_offset_x
                     self.dragging_card.rect.y = my - self.drag_offset_y
 
+            # MOUSEBUTTON_UP
             elif event.type == pygame.MOUSEBUTTONUP and event.button == 1:
                 mx, my = event.pos
                 if self.dragging_card:
@@ -220,13 +233,25 @@ class App:
     def _draw_table(self):
         self.screen.fill(FELT_COLOR)
 
+    def _update_buttons(self):
+        if self.game.phase == "discard":
+            deadwood = self.game.player.deadwood_val()
+            self.knock_button.enabled = deadwood <= 10
+            self.gin_button.enabled = deadwood == 0
+        else:
+            self.knock_button.enabled = False
+            self.gin_button.enabled = False
+
     def run(self):
         while self.running:
             self._handle_events()
+            self._update_buttons()
             self._draw_table()
             self.all_sprites.draw(self.screen)
             self.pile_view.draw()
             self.bin_view.draw(self.dragging_card)
+            self.knock_button.draw(self.screen)
+            self.gin_button.draw(self.screen)
             pygame.display.flip()
             self.clock.tick(60)
 
