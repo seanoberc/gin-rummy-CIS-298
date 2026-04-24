@@ -123,7 +123,7 @@ class App:
             self._draw_table()
             self.all_sprites.draw(self.screen)
             self.pile_view.draw()
-            self.bin_view.draw()
+            self.bin_view.draw(self.dragging_card)
             pygame.display.flip()
             self.clock.tick(60)
 

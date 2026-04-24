@@ -8,7 +8,7 @@ BIN_HEIGHT = 200
 BIN_BORDER_COLOR = (30, 30, 30)
 BIN_LABEL_COLOR = (240, 240, 240)
 CARD_SPACING = 30
-
+HIGHLIGHT_COLOR = (200, 200, 60)
 
 class BinView:
     def __init__(self, screen, player):
@@ -23,7 +23,7 @@ class BinView:
         self.sets_rect = pygame.Rect(BIN_MARGIN, BIN_MARGIN + BIN_HEIGHT + BIN_MARGIN, BIN_WIDTH, BIN_HEIGHT)
 
     # draw runs-bin:
-    def draw(self):
+    def draw(self, dragging_card=None):
         pygame.draw.rect(self.screen, BIN_BORDER_COLOR, self.runs_rect, 2)
         runs_label = self.font.render("RUNS", True, BIN_LABEL_COLOR)
         self.screen.blit(runs_label, (self.runs_rect.x + 10, self.runs_rect.y + 8))
@@ -32,6 +32,13 @@ class BinView:
         pygame.draw.rect(self.screen, BIN_BORDER_COLOR, self.sets_rect, 2)
         sets_label = self.font.render("SETS", True, BIN_LABEL_COLOR)
         self.screen.blit(sets_label, (self.sets_rect.x + 10, self.sets_rect.y + 8))
+
+        # highlight bins when a card is dragged over them
+        if dragging_card:
+            if self.is_runs_drop(dragging_card.rect):
+                pygame.draw.rect(self.screen, HIGHLIGHT_COLOR, self.runs_rect, 3)
+            elif self.is_sets_drop(dragging_card.rect):
+                pygame.draw.rect(self.screen, HIGHLIGHT_COLOR, self.sets_rect, 3)
 
         # draw cards inside each bin:
         self._draw_cards_in_bin(self.player.groups["runs"], self.runs_rect)
