@@ -1,28 +1,38 @@
-import pydealer
+from models.deck import Deck
+from models.player import Player
 
 class Game:
     def __init__(self):
-        self.deck = pydealer.Deck()
-        self.deck.shuffle()
-        self.discard_pile = pydealer.Stack()
-        self.player_hand = None
-        self.ai_hand = None
+        self.deck = Deck()
+        self.player = Player("Human")
+        self.phase = "draw"
 
-    # TODO: func deal()
-    def deal(self):
-        self.player_hand = self.deck.deal(10)
-        self.ai_hand = self.deck.deal(10)
+        # deal 10 cards to player:
+        self.player.set_hand(self.deck.deal(10))
 
-        # flip one card to begin the discard pile:
-        self.discard_pile.add(self.deck.deal(1))
+        # flip one card to start discard pile
+        self.deck.discard(self.deck.draw())
 
-    # TODO: func draw()
-    def get_top_discard(self):
-        return self.discard_pile[-1]
+    def draw_from_stock(self):
+        if self.phase != "draw":
+            return None
+        card = self.deck.draw()
+        self.player.add_card(card)
+        self.phase = "discard"
+        return card
 
-    # TODO: func discard()
-    def draw_from_deck(self):
-        return self.deck.deal(1)
+    def draw_from_discard(self):
+        if self.phase != "draw" or self.deck.top_discard() is None:
+            return None
+        card = self.deck.take_discard()
+        self.player.add_card(card)
+        self.phase = "discard"
+        return card
 
-    def discard(self, card):
-        self.discard_pile.add(card)
+    def discard_card(self, card):
+        if self.phase != "discard":
+            return False
+        self.deck.discard(card)
+        self.player.remove_card(card)
+        self.phase = True
+        return True

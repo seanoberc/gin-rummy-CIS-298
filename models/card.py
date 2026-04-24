@@ -1,34 +1,52 @@
-# point values for Gin Rummy:
-#   Ace = 1; number cards = face value; face cards = 10
+import pygame
 
-VALUES = {
-    "Ace": 1, "2": 2, "3": 3, "4": 4, "5": 5,
-    "6": 6, "7": 7, "8": 8, "9": 9, "10": 10,
-    "Jack": 10, "Queen": 10, "King": 10
+CARD_WIDTH = 80
+CARD_HEIGHT = 110
+
+SUIT_TO_FILE = {
+    "Clubs":    "Clovers",
+    "Diamonds": "Tiles",
+    "Hearts":   "Hearts",
+    "Spades":   "Pikes",
 }
 
-# rank order for detecting runs (Ace is lowest):
-RANK_ORDER = {
-    "Ace": 1, "2": 2, "3": 3, "4": 4, "5": 5,
-    "6": 6, "7": 7, "8": 8, "9": 9, "10": 10,
-    "Jack": 11, "Queen": 12, "King": 13
-}
-
-SUIT_SYMBOLS = {
-    "Spades": "♠",
-    "Hearts": "♥",
-    "Diamonds": "♦",
-    "Clubs": "♣"
-}
-
-RANK_SYMBOLS = {
-    "Ace": "A", "2": "2", "3": "3", "4": "4", "5": "5",
+RANK_TO_FILE = {
+    "Ace": "A",
+    "2": "2", "3": "3", "4": "4", "5": "5",
     "6": "6", "7": "7", "8": "8", "9": "9", "10": "10",
-    "Jack": "J", "Queen": "Q", "King": "K"
+    "Jack": "Jack", "Queen": "Queen", "King": "King",
 }
 
-def get_value(card):
-    return VALUES[card.value]
+# Card class extends Pygame's Sprite class
+class Card(pygame.sprite.Sprite):
+    def __init__(self, rank, suit):
+        super().__init__()  # constructor for the parent class (which is now `Sprite`)
+        self.rank = rank
+        self.suit = suit
 
-def get_rank_order(card):
-    return RANK_ORDER[card.value]
+        path = self._image_path()
+        image = pygame.image.load(path).convert_alpha()
+        self.image = pygame.transform.smoothscale(image, (CARD_WIDTH, CARD_HEIGHT)) # Pygame uses `Surface` for the canvas
+        self.rect = self.image.get_rect()       # Pygame's 'rect` stores the card position on the screen
+
+    def _image_path(self):
+        suit_name = SUIT_TO_FILE[self.suit]
+        rank_name = RANK_TO_FILE[self.rank]
+        return f"assets/images/sprites/{suit_name}_{rank_name}_black.png"
+
+        # Draw the rank and suit onto the card image
+        # self._draw_card()
+
+    def __repr__(self):
+        return f"{self.rank} of {self.suit}"
+    #
+    # def _draw_card(self):
+    #     font = pygame.font.SysFont("applesymbols", 18)
+    #     color = SUIT_COLORS[self.suit]
+    #     symbol = SUIT_SYMBOLS[self.suit]
+    #
+    #     # Top-left corner: rank then symbol below it
+    #     rank_surface = font.render(self.rank, True, color)
+    #     suit_surface = font.render(symbol, True, color)
+    #     self.image.blit(rank_surface, (4, 4))
+    #     self.image.blit(suit_surface, (4, 22))
