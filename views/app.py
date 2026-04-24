@@ -140,14 +140,16 @@ class App:
                     # check if card is dropped on discard pile:
                     discard_rect = pygame.Rect(DISCARD_X, CENTER_Y, CARD_WIDTH, CARD_HEIGHT)
 
-                    if discard_rect.collidepoint(self.dragging_card.rect.center):
+                    if discard_rect.colliderect(self.dragging_card.rect):
+                        # print(f"phase: {self.game.phase}")
                         success = self.game.discard_card(self.dragging_card)
+                        # print(f"discard success: {success}")
                         if success:
-                                self.all_sprites.remove(self.dragging_card)
-                        # self.deck.discard(self.dragging_card)
-                        # self.player.remove_card(self.dragging_card)
-                        # self.all_sprites.remove(self.dragging_card)
-                        # self.phase = "draw"
+                            self.dragging_card.rect.x = DISCARD_X
+                            self.dragging_card.rect.y = CENTER_Y
+                            self.all_sprites.remove(self.dragging_card)
+                            self._reposition_hand()
+
                     else:
                         old_index = self.game.player.hand.index(self.dragging_card)
                         new_index = self._hand_index_at(mx)
@@ -163,8 +165,7 @@ class App:
     # `_hand_index_at()` converts a mouse position into a "hand" index:
     def _hand_index_at(self, mx):
         i = (mx - 20) // HAND_SPACING  # divide x-pos. by spacing to get slot index
-        return max(0,
-                   min(i, len(self.game.player.hand) - 1))  # prevents position from going below 0 or going above last card
+        return max(0, min(i, len(self.game.player.hand) - 1))  # prevents position from going below 0 or going above last card
 
     def _reposition_hand(self):
         for i, card in enumerate(self.game.player.hand):
@@ -187,8 +188,6 @@ class App:
     def run(self):
         while self.running:
             self._handle_events()
-
-            # render objects:
             self._draw_table()
             self.all_sprites.draw(self.screen)
             self._draw_piles()

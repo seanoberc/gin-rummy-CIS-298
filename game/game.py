@@ -34,5 +34,5 @@ class Game:
             return False
         self.deck.discard(card)
         self.player.remove_card(card)
-        self.phase = True
+        self.phase = "draw"
         return True
