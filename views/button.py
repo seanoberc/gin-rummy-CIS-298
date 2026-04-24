@@ -13,4 +13,23 @@ class Button:
         self.enabled = False  # disabled by default until game logic enables them
         self.font = pygame.font.SysFont(None, 28)
 
-    
+    def draw(self, screen):
+        # pick colors based on state
+        if not self.enabled:
+            color = BUTTON_DISABLED_COLOR
+            text_color = TEXT_DISABLED_COLOR
+        elif self.rect.collidepoint(pygame.mouse.get_pos()):
+            color = BUTTON_HOVER_COLOR
+            text_color = TEXT_COLOR
+        else:
+            color = BUTTON_COLOR
+            text_color = TEXT_COLOR
+
+        pygame.draw.rect(screen, color, self.rect, border_radius=6)
+        label_surface = self.font.render(self.label, True, text_color)
+        label_x = self.rect.centerx - label_surface.get_width() // 2
+        label_y = self.rect.centery - label_surface.get_height() // 2
+        screen.blit(label_surface, (label_x, label_y))
+
+    def is_clicked(self, mx, my):
+        return self.enabled and self.rect.collidepoint(mx, my)
