@@ -2,6 +2,7 @@ import sys
 import pygame
 from game.game import Game
 from views.hand_view import HandView
+from views.pile_view import PileView
 
 WINDOW_WIDTH = 1280
 WINDOW_HEIGHT = 720
@@ -9,12 +10,6 @@ FELT_COLOR = "#0B5D3B"
 
 CARD_WIDTH = 80
 CARD_HEIGHT = 110
-
-# constants to define center of table for stock and discard piles
-CENTER_Y = WINDOW_HEIGHT // 2 - CARD_HEIGHT // 2
-STOCK_X = WINDOW_WIDTH // 2 - CARD_WIDTH - 20
-DISCARD_X = WINDOW_WIDTH // 2 + 20
-
 
 class App:
     def __init__(self):
@@ -33,12 +28,12 @@ class App:
 
         # Game class now controls all state:
         self.game = Game()
+
+        # views:
         self.hand_view = HandView(WINDOW_HEIGHT, self.game.player)
+        self.pile_view = PileView(self.screen, self.game.deck, WINDOW_WIDTH, WINDOW_HEIGHT)
 
-        stock_image = pygame.image.load("assets/images/Blue_card_back.png").convert_alpha()
-        self.stock_image = pygame.transform.smoothscale(stock_image, (CARD_WIDTH, CARD_HEIGHT))
-
-        # position the player hand:
+        # add hand to Sprite Group and position it:
         for card in self.game.player.hand:
             self.all_sprites.add(card)
         self.hand_view.reposition()
@@ -53,7 +48,7 @@ class App:
                 mx, my = event.pos
 
                 if self.game.phase == "draw":
-                    stock_rect = pygame.Rect(STOCK_X, CENTER_Y, CARD_WIDTH, CARD_HEIGHT)
+                    stock_rect = self.pile_view.stock_rect()
                     if stock_rect.collidepoint(mx, my):
                         card = self.game.draw_from_stock()
                         if card:
@@ -61,7 +56,7 @@ class App:
                             self.hand_view.reposition()
                             return
 
-                    discard_rect = pygame.Rect(DISCARD_X, CENTER_Y, CARD_WIDTH, CARD_HEIGHT)
+                    discard_rect = self.pile_view.discard_rect()
                     if discard_rect.collidepoint(mx, my):
                         card = self.game.draw_from_discard()
                         if card:
@@ -84,13 +79,13 @@ class App:
             elif event.type == pygame.MOUSEBUTTONUP and event.button == 1:
                 mx, my = event.pos
                 if self.dragging_card:
-                    discard_rect = pygame.Rect(DISCARD_X, CENTER_Y, CARD_WIDTH, CARD_HEIGHT)
+                    discard_rect = self.pile_view.discard_rect()
 
                     if discard_rect.colliderect(self.dragging_card.rect):
                         success = self.game.discard_card(self.dragging_card)
                         if success:
-                            self.dragging_card.rect.x = DISCARD_X
-                            self.dragging_card.rect.y = CENTER_Y
+                            self.dragging_card.rect.x = discard_rect.x
+                            self.dragging_card.rect.y = discard_rect.y
                             self.all_sprites.remove(self.dragging_card)
                             self.hand_view.reposition()
                     else:
@@ -106,21 +101,12 @@ class App:
     def _draw_table(self):
         self.screen.fill(FELT_COLOR)
 
-    # helper function to draw stockpile:
-    def _draw_piles(self):
-        self.screen.blit(self.stock_image, (STOCK_X, CENTER_Y))
-
-        # draw top of discard pile (face-up):
-        top = self.game.deck.top_discard()
-        if top is not None:
-            self.screen.blit(top.image, (DISCARD_X, CENTER_Y))
-
     def run(self):
         while self.running:
             self._handle_events()
             self._draw_table()
             self.all_sprites.draw(self.screen)
-            self._draw_piles()
+            self.pile_view.draw()
             pygame.display.flip()
             self.clock.tick(60)
 
