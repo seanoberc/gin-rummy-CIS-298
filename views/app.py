@@ -126,10 +126,14 @@ class App:
                         self.all_sprites.add(card)
 
                 if self.knock_button.is_clicked(mx, my):
-                    print("Knock!")  # TODO: placeholder for now
+                    result, points = self.game.handle_knock()
+                    print(f"{result}: {points} points")
+                    self.scene = "menu"     # return to menu for now
 
                 if self.gin_button.is_clicked(mx, my):
-                    print("Gin!")  # TODO: placeholder for now
+                    result, points = self.game.handle_gin()
+                    print(f"{result}: {points} points")
+                    self.scene = "menu"     # return to menu for now
 
             elif event.type == pygame.MOUSEMOTION:
                 if self.dragging_card:
