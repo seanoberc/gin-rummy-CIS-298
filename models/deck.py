@@ -1,33 +1,44 @@
-import pydealer
+import random
+from models.card import Card
+
+SUITS = ["Spades", "Hearts", "Diamonds", "Clubs"]
+RANKS = ["Ace", "2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King"]
+
 
 class Deck:
     def __init__(self):
-        self.deck = pydealer.Deck()
-        self.deck.shuffle()
-        self.discard = pydealer.Stack()
+        # constructs a 52-card deck as a list of Card objects:
+        self.cards = []
+        self.discard_pile = []
+
+        # loop through each rank; for each rank loop through each suit
+        for rank in RANKS:
+            for suit in SUITS:
+                self.cards.append(Card(rank, suit))  # create a card for each combination
+
+        self.shuffle()
+
+    def shuffle(self):
+        random.shuffle(self.cards)
+
+    def draw(self):  # pops a card from the end of the list (becomes "top" card)
+        return self.cards.pop()
 
     def deal(self, n):
-        return self.deck.deal(n)
+        return [self.draw() for _ in range(n)]
 
-    def draw_card(self):
-        return self.deck.deal(1)[0]
+    def discard(self, card):
+        self.discard_pile.append(card)
 
     def top_discard(self):
-        if len(self.discard) > 0:
-            return self.discard[-1]
-        else:
-            return None
+        if self.discard_pile:
+            return self.discard_pile[-1]
+        return None
 
     def take_discard(self):
-        if len(self.discard) == 0:
-            return None
-        top = self.discard[-1]
-        taken = self.discard.get(str(top))
-        return list(taken)[0]
+        if self.discard_pile:
+            return self.discard_pile.pop()
+        return None
 
-
-    def discard_card(self, card):
-        self.discard.add(card)
-
-
-
+    def cards_remaining(self):
+        return len(self.cards)
