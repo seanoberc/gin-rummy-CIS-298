@@ -11,7 +11,7 @@ class Game:
     # TODO: func deal()
     def deal(self):
         self.player_hand = self.deck.deal(10)
-        self.ai_hand = self.deck.deal(10)z
+        self.ai_hand = self.deck.deal(10)
 
 
         # flip one card to begin the discard pile:

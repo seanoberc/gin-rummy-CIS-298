@@ -3,6 +3,7 @@ import pygame
 from models.card_sprite import load_card_images, card_file
 from models.deck import Deck
 from players.player import Player
+from players.ai_player import cpu_take_turn
 
 
 pygame.init()
@@ -33,13 +34,13 @@ deck_img = pygame.image.load("deck_of_cards_blue.png")
 deck_img = pygame.transform.smoothscale(deck_img, (CARD_WIDTH, CARD_HEIGHT))
 
 RUNS_BIN = pygame.Rect(MARGIN, MARGIN, LEFT_WIDTH, BIN_HEIGHT)
-SETS_BIN = pygame.Rect(MARGIN, RUNS_BIN.bottom, LEFT_WIDTH, BIN_HEIGHT)
+SETS_BIN = pygame.Rect(MARGIN, RUNS_BIN.bottom + GAP, LEFT_WIDTH, BIN_HEIGHT)
 
 DISCARD_RECT = pygame.Rect(0, 0, CARD_WIDTH, CARD_HEIGHT)
 
 DEADWOOD_BIN = pygame.Rect(MARGIN, HEIGHT - MARGIN - DEADWOOD_HEIGHT, WIDTH - 2 * MARGIN, DEADWOOD_HEIGHT)
 
-y_piles = (RUNS_BIN.bottom + SETS_BIN.top)
+y_piles = (RUNS_BIN.bottom + SETS_BIN.top) // 2
 
 DISCARD_RECT.center = (WIDTH // 2 - (CARD_WIDTH // 2 + PILE_GAP // 2), y_piles)
 DECK_RECT.center    = (WIDTH // 2 + (CARD_WIDTH // 2 + PILE_GAP // 2), y_piles)
@@ -127,10 +128,14 @@ def bin_card_rects(stacks, bin_rect):
 
 name = input("Enter your name: ")
 player = Player(name, is_human=True)
+cpu_player = Player("CPU", is_human=False)
 deck = Deck()
 hand = deck.deal(10)
 hand.sort()
 player.set_hand(hand)
+cpu_hand = deck.deal(10)
+cpu_hand.sort()
+cpu_player.set_hand(cpu_hand)
 
 deck.discard_card(deck.draw_card())
 
@@ -144,12 +149,23 @@ drag_card = None
 drag_source = None
 drag_offset = (0,0)
 
+current = "human"
+phase = "draw"
+
 #pygame - newbie guide to pygame, pygame sprites
 while True:
+    if current == "cpu":
+        pygame.time.wait(500)
+        cpu_take_turn(deck, cpu_player)
+        current = "human"
+        phase = "draw"
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             pygame.quit()
             raise SystemExit
+
+        if current != "human":
+            continue
 
         if event.type == pygame.MOUSEBUTTONDOWN and event.button == 1:
             drag_card = None
@@ -186,6 +202,7 @@ while True:
                 if idx is not None:
                     card = player.hand.pop(idx)
                     deck.discard_card(card)
+                    current = "cpu"
                     continue
             if len(player.hand) == 10:
                 if DISCARD_RECT.collidepoint(mx, my) and deck.top_discard() is not None:
