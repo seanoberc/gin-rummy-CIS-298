@@ -9,6 +9,7 @@ BOX_COLOR = (20, 20, 20)
 BUTTON_COLOR = (20, 20, 20)
 BUTTON_HOVER_COLOR = (50, 50, 50)
 
+
 class MenuView:
     def __init__(self, screen, window_width, window_height):
         self.screen = screen
@@ -45,10 +46,19 @@ class MenuView:
             200, 50
         )
 
+        self.customize_rect = pygame.Rect(
+            window_width // 2 - 100,
+            window_height // 2 + 220,
+            200, 50
+        )
+
     # handles user input events:
     def handle_event(self, event):
         if event.type == pygame.MOUSEBUTTONDOWN and event.button == 1:
             mx, my = event.pos
+
+            if self.customize_rect.collidepoint(mx, my):
+                return "customize"
 
             # toggle input box active state:
             self.input_active = self.input_rect.collidepoint(mx, my)
@@ -117,7 +127,15 @@ class MenuView:
         pygame.draw.rect(self.screen, exit_color, self.exit_rect, border_radius=6)
         exit_label = self.font_button.render("Exit", True, TEXT_COLOR)
         self.screen.blit(exit_label, (self.exit_rect.centerx - exit_label.get_width() // 2,
-            self.exit_rect.centery - exit_label.get_height() // 2
-        ))
+                                      self.exit_rect.centery - exit_label.get_height() // 2
+                                      ))
+
+        customize_color = BUTTON_HOVER_COLOR if self.customize_rect.collidepoint(mx, my) else BUTTON_COLOR
+        pygame.draw.rect(self.screen, customize_color, self.customize_rect, border_radius=6)
+        customize_label = self.font_button.render("Customize", True, TEXT_COLOR)
+        self.screen.blit(customize_label,
+                         (self.customize_rect.centerx - customize_label.get_width() // 2,
+                          self.customize_rect.centery - customize_label.get_height() // 2
+                          ))
 
         pygame.display.flip()

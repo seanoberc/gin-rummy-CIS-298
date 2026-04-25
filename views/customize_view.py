@@ -24,7 +24,7 @@ class CustomizeView:
         self.window_height = window_height
         self.visible = False
 
-        self.font_title = pygame.font.SysFont("Georgia", 2, bold=True)
+        self.font_title = pygame.font.SysFont("Georgia", 28, bold=True)
         self.font_label = pygame.font.SysFont("Georgia", 20)
         # self.font_button = pygame.font.SysFont("Georgia", 22)
 
@@ -43,7 +43,7 @@ class CustomizeView:
             "Default"
         )
         self.classic_button = Button(
-            self.panel_rect.x + 60,
+            self.panel_rect.x + 300,
             self.panel_rect.y + 100, 180, 44,
             "Classic"
         )
@@ -62,12 +62,12 @@ class CustomizeView:
             self.back_buttons[name] = btn
 
         # close window button:
-        self.close_botton = Button(
+        self.close_button = Button(
             self.panel_rect.centerx - 60,
             self.panel_rect.bottom - 60,
             120, 40, "Done"
         )
-        self.close_botton.enabled = True
+        self.close_button.enabled = True
 
         # load card back previews from spritesheet:
         self._back_previews = None
@@ -138,7 +138,7 @@ class CustomizeView:
 
         # back selection:
         if card_style.current_style == "classic":
-            bacK_label = self.font_label.render("Card Back", True, LABEL_COLOR)
+            back_label = self.font_label.render("Card Back", True, LABEL_COLOR)
             self.screen.blit(bacK_label,
                              (self.panel_rect.x + 40, self.panel_rect.y + 195))
 

@@ -16,6 +16,7 @@ FELT_COLOR = "#0B5D3B"
 CARD_WIDTH = 80
 CARD_HEIGHT = 110
 
+
 class App:
     def __init__(self):
         pygame.init()
@@ -29,6 +30,7 @@ class App:
 
         # game-related attributes that initialize when game starts:
         self.game = None
+        self.customize_view = CustomizeView(self.screen, WINDOW_WIDTH, WINDOW_HEIGHT)
         self.hand_view = None
         self.pile_view = None
         self.bin_view = None
@@ -38,14 +40,11 @@ class App:
         self.all_sprites = None
         self.dragging_card = None
         self.drag_source = None
-        self.drag_offset_x  = 0
+        self.drag_offset_x = 0
         self.drag_offset_y = 0
-
-        
 
     def _start_game(self, player_name):
         self.game = Game(player_name)
-        self.all_sprites = pygame.sprite.Group()
         self.all_sprites = pygame.sprite.Group()
         self.hand_view = HandView(WINDOW_HEIGHT, self.game.player)
         self.pile_view = PileView(self.screen, self.game.deck, WINDOW_WIDTH, WINDOW_HEIGHT)
@@ -104,12 +103,12 @@ class App:
                 if self.knock_button.is_clicked(mx, my):
                     result, points = self.game.handle_knock()
                     print(f"{result}: {points} points")
-                    self.scene = "menu"     # return to menu for now
+                    self.scene = "menu"  # return to menu for now
 
                 if self.gin_button.is_clicked(mx, my):
                     result, points = self.game.handle_gin()
                     print(f"{result}: {points} points")
-                    self.scene = "menu"     # return to menu for now
+                    self.scene = "menu"  # return to menu for now
 
             elif event.type == pygame.MOUSEMOTION:
                 if self.dragging_card:
@@ -174,12 +173,17 @@ class App:
                 for event in pygame.event.get():
                     if event.type == pygame.QUIT:
                         self.running = False
-                    result = self.menu_view.handle_event(event)
-                    if result == "start":
-                        self._start_game(self.menu_view.player_name.strip())
-                    elif result == "exit":
-                        self.running = False
-                    self.menu_view.draw()
+                    if not self.customize_view.handle_event(event):
+                        result = self.menu_view.handle_event(event)
+                        if result == "start":
+                            self._start_game(self.menu_view.player_name.strip())
+                        elif result == "exit":
+                            self.running = False
+                        elif result == "customize":
+                            self.customize_view.visible = True
+                self.menu_view.draw()
+                self.customize_view.draw()
+                pygame.display.flip()
 
             elif self.scene == "game":
                 self._handle_events()
