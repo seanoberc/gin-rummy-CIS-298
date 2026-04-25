@@ -16,6 +16,7 @@ BUTTON_HOVER_COLOR = (50, 50, 50)
 
 BACK_NAMES = ["red", "green", "blue", "peach"]
 
+
 class CustomizeView:
     def __init__(self, screen, window_width, window_height):
         self.screen = screen
@@ -105,3 +106,49 @@ class CustomizeView:
     def draw(self):
         if not self.visible:
             return
+
+        self._load_back_previews()
+
+        overlay = pygame.Surface((self.window_width, self.window_height), pygame.SRCALPHA)
+        overlay.fill(OVERLAY_COLOR)
+        self.screen.blit(overlay, (0, 0))
+
+        # window panel:
+        pygame.draw.rect(self.screen, PANEL_COLOR, self.panel_rect, border_radius=12)
+
+        title = self.font_title.render("Customize", True, TEXT_COLOR)
+        self.screen.blit(title, (
+            self.panel_rect.centerx - title.get_width() // 2,
+            self.panel_rect.y + 30
+        ))
+
+        # style label:
+        label = self.font_label.render("Card Style", True, LABEL_COLOR)
+        self.screen.blit(label,
+                         (self.panel_rect.x + 60, self.panel_rect.y + 70))
+
+        # style buttons highlight the selection:
+        self.default_button.draw(self.screen)
+        self.classic_button.draw(self.screen)
+
+        if card_style.current_style == "default":
+            pygame.draw.rect(self.screen, SELECTED_COLOR, self.default_button.rect, 2, border_radius=6)
+        else:
+            pygame.draw.rect(self.screen, SELECTED_COLOR, self.classic_button.rect, 2, border_radius=6)
+
+        # back selection:
+        if card_style.current_style == "classic":
+            bacK_label = self.font_label.render("Card Back", True, LABEL_COLOR)
+            self.screen.blit(bacK_label,
+                             (self.panel_rect.x + 40, self.panel_rect.y + 195))
+
+            for name, btn in self.back_buttons.items():
+                preview = self._back_previews[name]
+                self.screen.blit(preview, (btn.rect.x + 25, btn.rect.y - 78))
+
+                btn.draw(self.screen)
+
+                if card_style.current_back == name:
+                    pygame.draw.rect(self.screen, SELECTED_COLOR, btn.rect, 2, border_radius=6)
+
+        self.close_botton.draw(self.screen)

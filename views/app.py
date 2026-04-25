@@ -7,6 +7,7 @@ from views.bin_view import BinView
 from views.button import Button
 from views.menu_view import MenuView
 from views.score_view import ScoreView
+from views.customize_view import CustomizeView
 
 WINDOW_WIDTH = 1280
 WINDOW_HEIGHT = 720
@@ -26,16 +27,6 @@ class App:
         # pre-game menu view:
         self.menu_view = MenuView(self.screen, WINDOW_WIDTH, WINDOW_HEIGHT)
 
-        # drag state:
-        # self.dragging_card = None
-        # self.drag_offset_x = 0
-        # self.drag_offset_y = 0
-        # self.drag_source = None  # "hand" or "bin"
-        # self.all_sprites = pygame.sprite.Group()    # Pygame `Group` to hold all internal sprites used
-
-        # Game class now controls all state:
-        # self.game = Game()
-
         # game-related attributes that initialize when game starts:
         self.game = None
         self.hand_view = None
@@ -50,22 +41,7 @@ class App:
         self.drag_offset_x  = 0
         self.drag_offset_y = 0
 
-        # views:
-        # self.hand_view = HandView(WINDOW_HEIGHT, self.game.player)
-        # self.pile_view = PileView(self.screen, self.game.deck, WINDOW_WIDTH, WINDOW_HEIGHT)
-        # self.bin_view = BinView(self.screen, self.game.player)
-
-        # knock and gin buttons
-        # self.knock_button = Button(WINDOW_WIDTH - 220, WINDOW_HEIGHT - 80, 90, 40, "Knock")
-        # self.gin_button = Button(WINDOW_WIDTH - 120, WINDOW_HEIGHT - 80, 90, 40, "Gin!")
-
-        # add hand to Sprite Group and position it:
-        # for card in self.game.player.hand:
-        #     self.all_sprites.add(card)
-        # self.hand_view.reposition()
-        #
-        # self.screen.fill((0, 0, 0))
-        # pygame.display.flip()
+        
 
     def _start_game(self, player_name):
         self.game = Game(player_name)
