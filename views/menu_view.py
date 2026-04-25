@@ -39,14 +39,14 @@ class MenuView:
             200, 50
         )
 
-        # exit button rect:
-        self.exit_rect = pygame.Rect(
+        self.customize_rect = pygame.Rect(
             window_width // 2 - 100,
             window_height // 2 + 150,
             200, 50
         )
 
-        self.customize_rect = pygame.Rect(
+        # exit button rect:
+        self.exit_rect = pygame.Rect(
             window_width // 2 - 100,
             window_height // 2 + 220,
             200, 50
@@ -137,5 +137,3 @@ class MenuView:
                          (self.customize_rect.centerx - customize_label.get_width() // 2,
                           self.customize_rect.centery - customize_label.get_height() // 2
                           ))
-
-        pygame.display.flip()

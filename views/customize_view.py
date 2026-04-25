@@ -98,7 +98,7 @@ class CustomizeView:
                     if btn.is_clicked(mx, my):
                         card_style.current_back = name
 
-            if self.close_botton.is_clicked(mx, my):
+            if self.close_button.is_clicked(mx, my):
                 self.visible = False
 
         return True
@@ -139,16 +139,16 @@ class CustomizeView:
         # back selection:
         if card_style.current_style == "classic":
             back_label = self.font_label.render("Card Back", True, LABEL_COLOR)
-            self.screen.blit(bacK_label,
-                             (self.panel_rect.x + 40, self.panel_rect.y + 195))
+            self.screen.blit(back_label,
+                             (self.panel_rect.x + 40, self.panel_rect.y + 170))
 
             for name, btn in self.back_buttons.items():
                 preview = self._back_previews[name]
-                self.screen.blit(preview, (btn.rect.x + 25, btn.rect.y - 78))
+                self.screen.blit(preview, (btn.rect.centerx - preview.get_width() // 2, btn.rect.y - 78))
 
                 btn.draw(self.screen)
 
                 if card_style.current_back == name:
                     pygame.draw.rect(self.screen, SELECTED_COLOR, btn.rect, 2, border_radius=6)
 
-        self.close_botton.draw(self.screen)
+        self.close_button.draw(self.screen)
