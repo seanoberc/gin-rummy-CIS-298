@@ -1,4 +1,5 @@
 import pygame
+from models.meld import is_valid_run, is_valid_set
 
 CARD_WIDTH = 80
 CARD_HEIGHT = 110
@@ -41,10 +42,26 @@ class BinView:
                 pygame.draw.rect(self.screen, HIGHLIGHT_COLOR, self.sets_rect, 3)
 
         # draw cards inside each bin:
-        self._draw_cards_in_bin(self.player.groups["runs"], self.runs_rect)
-        self._draw_cards_in_bin(self.player.groups["sets"], self.sets_rect)
+        self._draw_cards_in_bin(self.player.groups["runs"], self.runs_rect, "runs")
+        self._draw_cards_in_bin(self.player.groups["sets"], self.sets_rect, "sets")
 
-    def _draw_cards_in_bin(self, cards, bin_rect):
+    def _draw_cards_in_bin(self, cards, bin_rect, meld_type):
+        if not cards:
+            return
+
+        # check is current group is a valid meld:
+        if meld_type == "runs":
+            valid = is_valid_run(cards)
+        else:
+            valid = is_valid_set(cards)
+
+        # validity indicator:
+        if valid:
+            indicator_color = (80, 200, 80)     # green
+        else:
+            indicator_color = (200, 80, 80)     # red
+        pygame.draw.circle(self.screen, indicator_color, (bin_rect.right - 20, bin_rect.y + 20), 8)
+
         # lay cards out left to right with slight overlap
         for i, card in enumerate(cards):
             card.rect.x = bin_rect.x + 10 + i * CARD_SPACING

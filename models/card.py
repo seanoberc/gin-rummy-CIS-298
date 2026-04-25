@@ -50,14 +50,3 @@ class Card(pygame.sprite.Sprite):
             return int(self.rank)
 
 
-    #
-    # def _draw_card(self):
-    #     font = pygame.font.SysFont("applesymbols", 18)
-    #     color = SUIT_COLORS[self.suit]
-    #     symbol = SUIT_SYMBOLS[self.suit]
-    #
-    #     # Top-left corner: rank then symbol below it
-    #     rank_surface = font.render(self.rank, True, color)
-    #     suit_surface = font.render(symbol, True, color)
-    #     self.image.blit(rank_surface, (4, 4))
-    #     self.image.blit(suit_surface, (4, 22))

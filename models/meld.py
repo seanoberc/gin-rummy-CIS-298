@@ -10,7 +10,7 @@ def rank_index(card):
 
 # in Gin Rummy, a valid set is a made of 3 or 4 cards of the same rank
 def is_valid_set(cards):
-    if len(cards < 3):
+    if len(cards) < 3:
         return False
     ranks = [card.rank for card in cards]
     return len(set(ranks)) == 1
