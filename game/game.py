@@ -1,6 +1,7 @@
 from models.deck import Deck
 from models.player import Player
 
+
 class Game:
     def __init__(self, player_name="Human"):
         self.deck = Deck()
@@ -39,17 +40,17 @@ class Game:
 
     def handle_knock(self):
         player_deadwood = self.player.deadwood_val()
-        opponent_deadwood = 0   # TODO: placholder
+        opponent_deadwood = 0  # TODO: placholder
 
-        if player_deadwood < opponent_deadwood:     # player wins round
+        if player_deadwood < opponent_deadwood:  # player wins round
             points = opponent_deadwood - player_deadwood
             self.player.score += points
             return ("player_wins", points)
-        else:   # opponent wins with 10-point bonus
+        else:  # opponent wins with 10-point bonus
             points = 10 + (player_deadwood - opponent_deadwood)
             return ("opponent_wins", points)
 
-    def handle_gin(self):   # player declares Gin (scores 20 + opponent's deadwood)
+    def handle_gin(self):  # player declares Gin (scores 20 + opponent's deadwood)
         opponent_deadwood = 0
         points = 20 + opponent_deadwood
         self.player.score += points

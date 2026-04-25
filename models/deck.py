@@ -4,6 +4,7 @@ from models.card import Card
 SUITS = ["Spades", "Hearts", "Diamonds", "Clubs"]
 RANKS = ["Ace", "2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King"]
 
+
 class Deck:
     def __init__(self):
         # constructs a 52-card deck as a list of Card objects:
@@ -13,14 +14,14 @@ class Deck:
         # loop through each rank; for each rank loop through each suit
         for rank in RANKS:
             for suit in SUITS:
-                self.cards.append(Card(rank, suit)) # create a card for each combination
+                self.cards.append(Card(rank, suit))  # create a card for each combination
 
         self.shuffle()
 
     def shuffle(self):
         random.shuffle(self.cards)
 
-    def draw(self):     # pops a card from the end of the list (becomes "top" card)
+    def draw(self):  # pops a card from the end of the list (becomes "top" card)
         return self.cards.pop()
 
     def deal(self, n):

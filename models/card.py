@@ -6,10 +6,10 @@ CARD_WIDTH = 80
 CARD_HEIGHT = 110
 
 SUIT_TO_FILE = {
-    "Clubs":    "Clovers",
+    "Clubs": "Clovers",
     "Diamonds": "Tiles",
-    "Hearts":   "Hearts",
-    "Spades":   "Pikes",
+    "Hearts": "Hearts",
+    "Spades": "Pikes",
 }
 
 RANK_TO_FILE = {
@@ -19,9 +19,10 @@ RANK_TO_FILE = {
     "Jack": "Jack", "Queen": "Queen", "King": "King",
 }
 
+
 # Card class extends PyGame's Sprite class
 class Card(pygame.sprite.Sprite):
-    _spritesheet = None     # spritesheet shared across all cards
+    _spritesheet = None  # spritesheet shared across all cards
 
     def __init__(self, rank, suit):
         super().__init__()  # constructor for the parent class (which is now `Sprite`)
@@ -31,8 +32,9 @@ class Card(pygame.sprite.Sprite):
         # path = self._image_path()
         # image = pygame.image.load(path).convert_alpha()
         image = self._load_image()
-        self.image = pygame.transform.smoothscale(image, (CARD_WIDTH, CARD_HEIGHT)) # Pygame uses `Surface` for the canvas
-        self.rect = self.image.get_rect()       # PyGame's 'rect` stores the card position on the screen
+        self.image = pygame.transform.smoothscale(image,
+                                                  (CARD_WIDTH, CARD_HEIGHT))  # Pygame uses `Surface` for the canvas
+        self.rect = self.image.get_rect()  # PyGame's 'rect` stores the card position on the screen
 
     def _load_image(self):
         if card_style.current_style == "classic":
@@ -59,5 +61,3 @@ class Card(pygame.sprite.Sprite):
             return 1
         else:
             return int(self.rank)
-
-
