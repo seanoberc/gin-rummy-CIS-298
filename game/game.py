@@ -1,40 +1,51 @@
 from models.deck import Deck
 from models.player import Player
+from models.ai_player import cpu_take_turn
 
 
 class Game:
     def __init__(self, player_name="Human"):
         self.deck = Deck()
-        self.player = Player(player_name)
+        self.player = Player(player_name, is_human=True)
+        self.cpu = Player("CPU", is_human=False)
+        self.turn = "human"
         self.phase = "draw"
 
         # deal 10 cards to player:
         self.player.set_hand(self.deck.deal(10))
+        self.cpu.set_hand(self.deck.deal(10))
 
         # flip one card to start discard pile
         self.deck.discard(self.deck.draw())
 
     def draw_from_stock(self):
-        if self.phase != "draw":
+        if self.turn != "human" or self.phase != "draw":
             return None
         card = self.deck.draw()
+        if card is None:
+            return None
         self.player.add_card(card)
         self.phase = "discard"
         return card
 
     def draw_from_discard(self):
-        if self.phase != "draw" or self.deck.top_discard() is None:
+        if self.phase != "draw" or self.turn != "draw":
             return None
         card = self.deck.take_discard()
+        if card is None:
+            return None
         self.player.add_card(card)
-        self.phase = "discard"
         return card
 
     def discard_card(self, card):
-        if self.phase != "discard":
+        if self.turn != "human" or self.phase != "discard":
             return False
         self.deck.discard(card)
         self.player.remove_card(card)
+        self.phase = "draw"
+        self.turn = "cpu"
+        cpu_take_turn(self.deck, self.cpu)
+        self.turn = "human"
         self.phase = "draw"
         return True
 
