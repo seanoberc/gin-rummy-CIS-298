@@ -1,9 +1,10 @@
 
 class Player:
-    def __init__(self, name):
+    def __init__(self, name, is_human = True):
         self.name = name
         self.hand = []
         self.score = 0
+        self.is_human = is_human
         self.groups = {
             "runs": [],
             "sets": [],
