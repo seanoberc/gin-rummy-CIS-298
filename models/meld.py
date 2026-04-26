@@ -54,7 +54,7 @@ def is_valid_run(cards):
         return False
     
     def get_val(card):
-        return RANK_ORDER.index(str(card.rank).upper())
+        return RANK_ORDER.index(str(card.rank))
 
     #sorts by suits then rank
     sorted_cards = sorted(cards, key=lambda c: (c.suit, get_val(c)))

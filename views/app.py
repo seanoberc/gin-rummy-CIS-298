@@ -100,14 +100,13 @@ class App:
                         self.drag_offset_y = my - card.rect.y
                         self.all_sprites.add(card)
 
-                #NEED TO FIX UP GIN AND KNOCK HANDLING 
                 if self.knock_button.is_clicked(mx, my):
-                    result, points = self.game.handle_knock()
+                    result, points = self.game.handle_knock(self.game.cpu)
                     print(f"{result}: {points} points")
                     self.scene = "menu"  # return to menu for now
 
                 if self.gin_button.is_clicked(mx, my):
-                    result, points = self.game.handle_gin()
+                    result, points = self.game.handle_gin(self.game.cpu)
                     print(f"{result}: {points} points")
                     self.scene = "menu"  # return to menu for now
 

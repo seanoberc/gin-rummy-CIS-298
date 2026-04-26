@@ -3,8 +3,120 @@
   "WorkspaceRootPath": "C:\\Users\\daved\\source\\repos\\gin-rummy-CIS-298\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\daved\\source\\repos\\gin-rummy-CIS-298\\views\\app.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:views\\app.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\daved\\source\\repos\\gin-rummy-CIS-298\\models\\deck.py||{8B382828-6202-11D1-8870-0000F87579D2}|",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:models\\deck.py||{8B382828-6202-11D1-8870-0000F87579D2}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\daved\\source\\repos\\gin-rummy-CIS-298\\models\\hand.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:models\\hand.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\daved\\source\\repos\\gin-rummy-CIS-298\\models\\meld.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:models\\meld.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\daved\\source\\repos\\gin-rummy-CIS-298\\models\\player.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:models\\player.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\daved\\source\\repos\\gin-rummy-CIS-298\\main.py||{8B382828-6202-11D1-8870-0000F87579D2}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:main.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\daved\\source\\repos\\gin-rummy-CIS-298\\models\\ai_player.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:models\\ai_player.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\daved\\source\\repos\\gin-rummy-CIS-298\\models\\card.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:models\\card.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\daved\\source\\repos\\gin-rummy-CIS-298\\models\\__init__.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:models\\__init__.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\daved\\source\\repos\\gin-rummy-CIS-298\\game\\game.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:game\\game.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\daved\\source\\repos\\gin-rummy-CIS-298\\models\\card_style.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:models\\card_style.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\daved\\source\\repos\\gin-rummy-CIS-298\\models\\spritesheet.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:models\\spritesheet.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\daved\\source\\repos\\gin-rummy-CIS-298\\tests\\test_card.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:tests\\test_card.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\daved\\source\\repos\\gin-rummy-CIS-298\\tests\\test_hand.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:tests\\test_hand.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\daved\\source\\repos\\gin-rummy-CIS-298\\tests\\test_scorer.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:tests\\test_scorer.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\daved\\source\\repos\\gin-rummy-CIS-298\\requirements.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:requirements.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\daved\\source\\repos\\gin-rummy-CIS-298\\README.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:README.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\daved\\source\\repos\\gin-rummy-CIS-298\\.idea\\vcs.xml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:.idea\\vcs.xml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\daved\\source\\repos\\gin-rummy-CIS-298\\.idea\\modules.xml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:.idea\\modules.xml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\daved\\source\\repos\\gin-rummy-CIS-298\\.idea\\misc.xml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:.idea\\misc.xml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\daved\\source\\repos\\gin-rummy-CIS-298\\.idea\\gin-rummy-CIS-298.iml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:.idea\\gin-rummy-CIS-298.iml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\daved\\source\\repos\\gin-rummy-CIS-298\\.idea\\.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:.idea\\.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\daved\\source\\repos\\gin-rummy-CIS-298\\game\\scorer.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:game\\scorer.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\daved\\source\\repos\\gin-rummy-CIS-298\\views\\bin_view.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:views\\bin_view.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\daved\\source\\repos\\gin-rummy-CIS-298\\views\\button.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:views\\button.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\daved\\source\\repos\\gin-rummy-CIS-298\\views\\customize_view.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:views\\customize_view.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\daved\\source\\repos\\gin-rummy-CIS-298\\views\\hand_view.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:views\\hand_view.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\daved\\source\\repos\\gin-rummy-CIS-298\\views\\score_view.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:views\\score_view.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\daved\\source\\repos\\gin-rummy-CIS-298\\views\\pile_view.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:views\\pile_view.py||{8B382828-6202-11D1-8870-0000F87579D2}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,7 +126,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 16,
           "Children": [
             {
               "$type": "Bookmark",
@@ -22,15 +134,379 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "test_card.py",
+              "DocumentMoniker": "C:\\Users\\daved\\source\\repos\\gin-rummy-CIS-298\\tests\\test_card.py",
+              "RelativeDocumentMoniker": "tests\\test_card.py",
+              "ToolTip": "C:\\Users\\daved\\source\\repos\\gin-rummy-CIS-298\\tests\\test_card.py",
+              "RelativeToolTip": "tests\\test_card.py",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
+              "WhenOpened": "2026-04-26T22:02:29.818Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "test_hand.py",
+              "DocumentMoniker": "C:\\Users\\daved\\source\\repos\\gin-rummy-CIS-298\\tests\\test_hand.py",
+              "RelativeDocumentMoniker": "tests\\test_hand.py",
+              "ToolTip": "C:\\Users\\daved\\source\\repos\\gin-rummy-CIS-298\\tests\\test_hand.py",
+              "RelativeToolTip": "tests\\test_hand.py",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
+              "WhenOpened": "2026-04-26T22:02:28.843Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "test_scorer.py",
+              "DocumentMoniker": "C:\\Users\\daved\\source\\repos\\gin-rummy-CIS-298\\tests\\test_scorer.py",
+              "RelativeDocumentMoniker": "tests\\test_scorer.py",
+              "ToolTip": "C:\\Users\\daved\\source\\repos\\gin-rummy-CIS-298\\tests\\test_scorer.py",
+              "RelativeToolTip": "tests\\test_scorer.py",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
+              "WhenOpened": "2026-04-26T22:02:28.159Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "requirements.txt",
+              "DocumentMoniker": "C:\\Users\\daved\\source\\repos\\gin-rummy-CIS-298\\requirements.txt",
+              "RelativeDocumentMoniker": "requirements.txt",
+              "ToolTip": "C:\\Users\\daved\\source\\repos\\gin-rummy-CIS-298\\requirements.txt",
+              "RelativeToolTip": "requirements.txt",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
+              "WhenOpened": "2026-04-26T22:02:25.69Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "README.md",
+              "DocumentMoniker": "C:\\Users\\daved\\source\\repos\\gin-rummy-CIS-298\\README.md",
+              "RelativeDocumentMoniker": "README.md",
+              "ToolTip": "C:\\Users\\daved\\source\\repos\\gin-rummy-CIS-298\\README.md",
+              "RelativeToolTip": "README.md",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
+              "WhenOpened": "2026-04-26T22:02:24.841Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "vcs.xml",
+              "DocumentMoniker": "C:\\Users\\daved\\source\\repos\\gin-rummy-CIS-298\\.idea\\vcs.xml",
+              "RelativeDocumentMoniker": ".idea\\vcs.xml",
+              "ToolTip": "C:\\Users\\daved\\source\\repos\\gin-rummy-CIS-298\\.idea\\vcs.xml",
+              "RelativeToolTip": ".idea\\vcs.xml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003576|",
+              "WhenOpened": "2026-04-26T22:01:15.588Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "spritesheet.py",
+              "DocumentMoniker": "C:\\Users\\daved\\source\\repos\\gin-rummy-CIS-298\\models\\spritesheet.py",
+              "RelativeDocumentMoniker": "models\\spritesheet.py",
+              "ToolTip": "C:\\Users\\daved\\source\\repos\\gin-rummy-CIS-298\\models\\spritesheet.py",
+              "RelativeToolTip": "models\\spritesheet.py",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
+              "WhenOpened": "2026-04-26T22:00:38.682Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "__init__.py",
+              "DocumentMoniker": "C:\\Users\\daved\\source\\repos\\gin-rummy-CIS-298\\models\\__init__.py",
+              "RelativeDocumentMoniker": "models\\__init__.py",
+              "ToolTip": "C:\\Users\\daved\\source\\repos\\gin-rummy-CIS-298\\models\\__init__.py",
+              "RelativeToolTip": "models\\__init__.py",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
+              "WhenOpened": "2026-04-26T19:22:48.424Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "player.py",
+              "DocumentMoniker": "C:\\Users\\daved\\source\\repos\\gin-rummy-CIS-298\\models\\player.py",
+              "RelativeDocumentMoniker": "models\\player.py",
+              "ToolTip": "C:\\Users\\daved\\source\\repos\\gin-rummy-CIS-298\\models\\player.py",
+              "RelativeToolTip": "models\\player.py",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
+              "WhenOpened": "2026-04-26T19:16:18.146Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "meld.py",
+              "DocumentMoniker": "C:\\Users\\daved\\source\\repos\\gin-rummy-CIS-298\\models\\meld.py",
+              "RelativeDocumentMoniker": "models\\meld.py",
+              "ToolTip": "C:\\Users\\daved\\source\\repos\\gin-rummy-CIS-298\\models\\meld.py",
+              "RelativeToolTip": "models\\meld.py",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
+              "WhenOpened": "2026-04-26T19:31:41.631Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "hand.py",
+              "DocumentMoniker": "C:\\Users\\daved\\source\\repos\\gin-rummy-CIS-298\\models\\hand.py",
+              "RelativeDocumentMoniker": "models\\hand.py",
+              "ToolTip": "C:\\Users\\daved\\source\\repos\\gin-rummy-CIS-298\\models\\hand.py",
+              "RelativeToolTip": "models\\hand.py",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
+              "WhenOpened": "2026-04-26T20:44:39.524Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "deck.py",
+              "DocumentMoniker": "C:\\Users\\daved\\source\\repos\\gin-rummy-CIS-298\\models\\deck.py",
+              "RelativeDocumentMoniker": "models\\deck.py",
+              "ToolTip": "C:\\Users\\daved\\source\\repos\\gin-rummy-CIS-298\\models\\deck.py",
+              "RelativeToolTip": "models\\deck.py",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
+              "WhenOpened": "2026-04-26T19:34:43.288Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "card_style.py",
+              "DocumentMoniker": "C:\\Users\\daved\\source\\repos\\gin-rummy-CIS-298\\models\\card_style.py",
+              "RelativeDocumentMoniker": "models\\card_style.py",
+              "ToolTip": "C:\\Users\\daved\\source\\repos\\gin-rummy-CIS-298\\models\\card_style.py",
+              "RelativeToolTip": "models\\card_style.py",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
+              "WhenOpened": "2026-04-26T22:00:47.162Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "card.py",
+              "DocumentMoniker": "C:\\Users\\daved\\source\\repos\\gin-rummy-CIS-298\\models\\card.py",
+              "RelativeDocumentMoniker": "models\\card.py",
+              "ToolTip": "C:\\Users\\daved\\source\\repos\\gin-rummy-CIS-298\\models\\card.py",
+              "RelativeToolTip": "models\\card.py",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
+              "WhenOpened": "2026-04-26T21:33:22.194Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "game.py",
+              "DocumentMoniker": "C:\\Users\\daved\\source\\repos\\gin-rummy-CIS-298\\game\\game.py",
+              "RelativeDocumentMoniker": "game\\game.py",
+              "ToolTip": "C:\\Users\\daved\\source\\repos\\gin-rummy-CIS-298\\game\\game.py",
+              "RelativeToolTip": "game\\game.py",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
+              "WhenOpened": "2026-04-26T18:44:30.172Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "app.py",
+              "DocumentMoniker": "C:\\Users\\daved\\source\\repos\\gin-rummy-CIS-298\\views\\app.py",
+              "RelativeDocumentMoniker": "views\\app.py",
+              "ToolTip": "C:\\Users\\daved\\source\\repos\\gin-rummy-CIS-298\\views\\app.py",
+              "RelativeToolTip": "views\\app.py",
+              "ViewState": "AgIAAEQAAAAAAAAAAAArwGcAAABKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
+              "WhenOpened": "2026-04-26T19:19:06.449Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ai_player.py",
+              "DocumentMoniker": "C:\\Users\\daved\\source\\repos\\gin-rummy-CIS-298\\models\\ai_player.py",
+              "RelativeDocumentMoniker": "models\\ai_player.py",
+              "ToolTip": "C:\\Users\\daved\\source\\repos\\gin-rummy-CIS-298\\models\\ai_player.py",
+              "RelativeToolTip": "models\\ai_player.py",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
+              "WhenOpened": "2026-04-26T18:43:52.829Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "main.py",
               "DocumentMoniker": "C:\\Users\\daved\\source\\repos\\gin-rummy-CIS-298\\main.py",
               "RelativeDocumentMoniker": "main.py",
               "ToolTip": "C:\\Users\\daved\\source\\repos\\gin-rummy-CIS-298\\main.py",
               "RelativeToolTip": "main.py",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
               "WhenOpened": "2026-04-26T18:27:06.241Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "modules.xml",
+              "DocumentMoniker": "C:\\Users\\daved\\source\\repos\\gin-rummy-CIS-298\\.idea\\modules.xml",
+              "RelativeDocumentMoniker": ".idea\\modules.xml",
+              "ToolTip": "C:\\Users\\daved\\source\\repos\\gin-rummy-CIS-298\\.idea\\modules.xml",
+              "RelativeToolTip": ".idea\\modules.xml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003576|",
+              "WhenOpened": "2026-04-26T22:01:14.973Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "misc.xml",
+              "DocumentMoniker": "C:\\Users\\daved\\source\\repos\\gin-rummy-CIS-298\\.idea\\misc.xml",
+              "RelativeDocumentMoniker": ".idea\\misc.xml",
+              "ToolTip": "C:\\Users\\daved\\source\\repos\\gin-rummy-CIS-298\\.idea\\misc.xml",
+              "RelativeToolTip": ".idea\\misc.xml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003576|",
+              "WhenOpened": "2026-04-26T22:01:14.402Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "gin-rummy-CIS-298.iml",
+              "DocumentMoniker": "C:\\Users\\daved\\source\\repos\\gin-rummy-CIS-298\\.idea\\gin-rummy-CIS-298.iml",
+              "RelativeDocumentMoniker": ".idea\\gin-rummy-CIS-298.iml",
+              "ToolTip": "C:\\Users\\daved\\source\\repos\\gin-rummy-CIS-298\\.idea\\gin-rummy-CIS-298.iml",
+              "RelativeToolTip": ".idea\\gin-rummy-CIS-298.iml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-04-26T22:01:13.531Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": ".gitignore",
+              "DocumentMoniker": "C:\\Users\\daved\\source\\repos\\gin-rummy-CIS-298\\.idea\\.gitignore",
+              "RelativeDocumentMoniker": ".idea\\.gitignore",
+              "ToolTip": "C:\\Users\\daved\\source\\repos\\gin-rummy-CIS-298\\.idea\\.gitignore",
+              "RelativeToolTip": ".idea\\.gitignore",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-04-26T22:01:12.611Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "scorer.py",
+              "DocumentMoniker": "C:\\Users\\daved\\source\\repos\\gin-rummy-CIS-298\\game\\scorer.py",
+              "RelativeDocumentMoniker": "game\\scorer.py",
+              "ToolTip": "C:\\Users\\daved\\source\\repos\\gin-rummy-CIS-298\\game\\scorer.py",
+              "RelativeToolTip": "game\\scorer.py",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
+              "WhenOpened": "2026-04-26T22:00:59.267Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "score_view.py",
+              "DocumentMoniker": "C:\\Users\\daved\\source\\repos\\gin-rummy-CIS-298\\views\\score_view.py",
+              "RelativeDocumentMoniker": "views\\score_view.py",
+              "ToolTip": "C:\\Users\\daved\\source\\repos\\gin-rummy-CIS-298\\views\\score_view.py",
+              "RelativeToolTip": "views\\score_view.py",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
+              "WhenOpened": "2026-04-26T21:33:38.135Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "hand_view.py",
+              "DocumentMoniker": "C:\\Users\\daved\\source\\repos\\gin-rummy-CIS-298\\views\\hand_view.py",
+              "RelativeDocumentMoniker": "views\\hand_view.py",
+              "ToolTip": "C:\\Users\\daved\\source\\repos\\gin-rummy-CIS-298\\views\\hand_view.py",
+              "RelativeToolTip": "views\\hand_view.py",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
+              "WhenOpened": "2026-04-26T21:33:39.961Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "customize_view.py",
+              "DocumentMoniker": "C:\\Users\\daved\\source\\repos\\gin-rummy-CIS-298\\views\\customize_view.py",
+              "RelativeDocumentMoniker": "views\\customize_view.py",
+              "ToolTip": "C:\\Users\\daved\\source\\repos\\gin-rummy-CIS-298\\views\\customize_view.py",
+              "RelativeToolTip": "views\\customize_view.py",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
+              "WhenOpened": "2026-04-26T21:33:40.479Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "pile_view.py",
+              "DocumentMoniker": "C:\\Users\\daved\\source\\repos\\gin-rummy-CIS-298\\views\\pile_view.py",
+              "RelativeDocumentMoniker": "views\\pile_view.py",
+              "ToolTip": "C:\\Users\\daved\\source\\repos\\gin-rummy-CIS-298\\views\\pile_view.py",
+              "RelativeToolTip": "views\\pile_view.py",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
+              "WhenOpened": "2026-04-26T21:33:32.932Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "button.py",
+              "DocumentMoniker": "C:\\Users\\daved\\source\\repos\\gin-rummy-CIS-298\\views\\button.py",
+              "RelativeDocumentMoniker": "views\\button.py",
+              "ToolTip": "C:\\Users\\daved\\source\\repos\\gin-rummy-CIS-298\\views\\button.py",
+              "RelativeToolTip": "views\\button.py",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
+              "WhenOpened": "2026-04-26T21:33:41.011Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "bin_view.py",
+              "DocumentMoniker": "C:\\Users\\daved\\source\\repos\\gin-rummy-CIS-298\\views\\bin_view.py",
+              "RelativeDocumentMoniker": "views\\bin_view.py",
+              "ToolTip": "C:\\Users\\daved\\source\\repos\\gin-rummy-CIS-298\\views\\bin_view.py",
+              "RelativeToolTip": "views\\bin_view.py",
+              "ViewState": "AgIAAFIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
+              "WhenOpened": "2026-04-26T21:33:41.608Z",
               "EditorCaption": ""
             }
           ]

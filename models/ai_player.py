@@ -37,3 +37,7 @@ def cpu_take_turn(deck, cpu_player):
     worst = max(cpu_player.hand, key=lambda c: discard_score(c, cpu_player.hand))
     cpu_player.remove_card(worst)
     deck.discard(worst)
+
+def deadwood_val(self):
+        return sum(card.point_val for card in self.hand)
+
