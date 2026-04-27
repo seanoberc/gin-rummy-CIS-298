@@ -22,6 +22,11 @@ class Game:
     def draw_from_stock(self):
         if self.turn != "human" or self.phase != "draw":
             return None
+
+        # check if stockpile is empty:
+        if self.deck.cards_remaining() == 0:
+            return None
+
         card = self.deck.draw()
         if card is None:
             return None
@@ -46,10 +51,13 @@ class Game:
         self.player.remove_card(card)
         self.phase = "draw"
         self.turn = "cpu"
-        cpu_take_turn(self.deck, self.cpu)
+        cpu_take_turn(self.deck, self.cpu)      # if stock is empty on CPU's turn, skip
         self.turn = "human"
         self.phase = "draw"
         return True
+
+    def stock_is_empty(self):
+        return self.deck.cards_remaining() == 0 and self.phase == "draw" and self.turn == "human"
 
     def handle_knock(self, opponent):
         if self.turn != "human" or self.phase != "discard":
