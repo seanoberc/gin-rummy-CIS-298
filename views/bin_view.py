@@ -5,7 +5,7 @@ CARD_WIDTH = 80
 CARD_HEIGHT = 110
 BIN_MARGIN = 20
 BIN_WIDTH = 400
-BIN_HEIGHT = 200
+BIN_HEIGHT = 260
 BIN_BORDER_COLOR = (30, 30, 30)
 BIN_LABEL_COLOR = (240, 240, 240)
 CARD_SPACING = 30
@@ -42,38 +42,53 @@ class BinView:
                 pygame.draw.rect(self.screen, HIGHLIGHT_COLOR, self.sets_rect, 3)
 
         # draw cards inside each bin:
-        self._draw_cards_in_bin(self.player.groups["runs"], self.runs_rect, "runs")
-        self._draw_cards_in_bin(self.player.groups["sets"], self.sets_rect, "sets")
+        self._draw_cards_in_bin(self.player.groups["runs"], self.runs_rect, "runs", dragging_card)
+        self._draw_cards_in_bin(self.player.groups["sets"], self.sets_rect, "sets", dragging_card)
 
-    def _draw_cards_in_bin(self, cards, bin_rect, meld_type):
-        if not cards:
+    def _draw_cards_in_bin(self, groups, bin_rect, meld_type, dragging_card=None):
+        if not groups:
             return
 
-        # check is current group is a valid meld:
-        if meld_type == "runs":
-            valid = is_valid_run(cards)
-        else:
-            valid = is_valid_set(cards)
-
-        # validity indicator:
-        if valid:
-            indicator_color = (80, 200, 80)     # green
-        else:
-            indicator_color = (200, 80, 80)     # red
+        valid = is_valid_run(groups) if meld_type == "runs" else is_valid_set(groups)
+        indicator_color = (80, 200, 80) if valid else (200, 80, 80)
         pygame.draw.circle(self.screen, indicator_color, (bin_rect.right - 20, bin_rect.y + 20), 8)
 
-        # lay cards out left to right with slight overlap
-        for i, card in enumerate(cards):
-            card.rect.x = bin_rect.x + 10 + i * CARD_SPACING
-            card.rect.y = bin_rect.y + (bin_rect.height - CARD_HEIGHT) // 2
-            self.screen.blit(card.image, card.rect)
+        pad_x = 10
+        pad_top = 40
+        pad_y = 10
+
+        x = bin_rect.x + pad_x
+        y = bin_rect.y + pad_top
+        row_h = CARD_HEIGHT + pad_y
+
+        for group in groups:
+
+            group_w = CARD_WIDTH + max(0, len(group) - 1) * CARD_SPACING
+
+
+            if x + group_w > bin_rect.right - pad_x:
+                x = bin_rect.x + pad_x
+                y += row_h
+
+            if y + CARD_HEIGHT > bin_rect.bottom - pad_y:
+                break
+
+            for ci, card in enumerate(group):
+                if card is dragging_card:
+                    continue
+                card.rect.x = x + ci * CARD_SPACING
+                card.rect.y = y
+                self.screen.blit(card.image, card.rect)
+
+            x += group_w + 20
 
     def card_at(self, mx, my):
         """Return the card and its group name if the mouse is over a bin card."""
         for group_name in ("runs", "sets"):
-            for card in reversed(self.player.groups[group_name]):
-                if card.rect.collidepoint(mx, my):
-                    return card, group_name
+            for group in reversed(self.player.groups[group_name]):
+                for card in reversed(group):
+                    if card.rect.collidepoint(mx, my):
+                        return card, group_name
         return None, None
 
     def is_runs_drop(self, rect):
