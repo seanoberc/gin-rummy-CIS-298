@@ -48,7 +48,7 @@ class Card(pygame.sprite.Sprite):
     def _image_path(self):
         suit_name = SUIT_TO_FILE[self.suit]
         rank_name = RANK_TO_FILE[self.rank]
-        return f"assets/images/sprites/{suit_name}_{rank_name}_black.png"
+        return f"black/{suit_name}_{rank_name}_black.png"
 
     def __repr__(self):
         return f"{self.rank} of {self.suit}"

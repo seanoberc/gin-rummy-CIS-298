@@ -45,4 +45,3 @@ class ScoreView:
         self.screen.blit(deadwood_label, (self.panel_rect.x + 12, self.panel_rect.y + 76))
         self.screen.blit(deadwood_value,
                          (self.panel_rect.right - deadwood_value.get_width() - 12, self.panel_rect.y + 76))
-        

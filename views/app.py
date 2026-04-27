@@ -24,6 +24,10 @@ class App:
         self.clock = pygame.time.Clock()
         self.running = True
         self.scene = "menu"
+        self.round_over_msg = ""
+        self.round_over_points = 0
+        self.play_again_button = Button(WINDOW_WIDTH // 2 - 140, WINDOW_HEIGHT // 2 + 40, 120, 45, "Play again")
+        self.quit_button = Button(WINDOW_WIDTH // 2 + 20, WINDOW_HEIGHT // 2 + 40, 120, 45, "Quit")
 
         # pre-game menu view:
         self.menu_view = MenuView(self.screen, WINDOW_WIDTH, WINDOW_HEIGHT)
@@ -101,14 +105,22 @@ class App:
                         self.all_sprites.add(card)
 
                 if self.knock_button.is_clicked(mx, my):
-                    result, points = self.game.handle_knock()
-                    print(f"{result}: {points} points")
-                    self.scene = "menu"  # return to menu for now
+                    result, points = self.game.handle_knock(self.game.cpu)
+                    self.round_over_msg = result
+                    self.round_over_points = points
+                    self.scene = "round_over"
+                    self.dragging_card = None
+                    self.drag_source = None
+                    return
 
                 if self.gin_button.is_clicked(mx, my):
-                    result, points = self.game.handle_gin()
-                    print(f"{result}: {points} points")
-                    self.scene = "menu"  # return to menu for now
+                    result, points = self.game.handle_gin(self.game.cpu)
+                    self.round_over_msg = result
+                    self.round_over_points = points
+                    self.scene = "round_over"
+                    self.dragging_card = None
+                    self.drag_source = None
+                    return
 
             elif event.type == pygame.MOUSEMOTION:
                 if self.dragging_card:
@@ -158,11 +170,34 @@ class App:
     def _draw_table(self):
         self.screen.fill(FELT_COLOR)
 
+    def _draw_round_over(self):
+        overlay = pygame.Surface((WINDOW_WIDTH, WINDOW_HEIGHT), pygame.SRCALPHA)
+        overlay.fill((0, 0, 0, 160))
+        self.screen.blit(overlay, (0, 0))
+
+        panel = pygame.Rect(0, 0, 520, 260)
+        panel.center = (WINDOW_WIDTH // 2, WINDOW_HEIGHT // 2)
+        pygame.draw.rect(self.screen, (30, 30, 30), panel, border_radius=12)
+        pygame.draw.rect(self.screen, (220, 220, 220), panel, 2, border_radius=12)
+
+        font = pygame.font.SysFont(None, 48)
+        small = pygame.font.SysFont(None, 32)
+        title = font.render("Round Over", True, (240, 240, 240))
+        msg = small.render(f"{self.round_over_msg} (+{self.round_over_points})", True, (240, 240, 240))
+
+        self.screen.blit(title, (panel.x + 30, panel.y + 30))
+        self.screen.blit(msg, (panel.x + 30, panel.y + 95))
+
+        self.play_again_button.draw(self.screen)
+        self.quit_button.draw(self.screen)
+
+
+
     def _update_buttons(self):
         if self.game.phase == "discard":
-            deadwood = self.game.player.deadwood_val()
-            self.knock_button.enabled = deadwood <= 10
-            self.gin_button.enabled = deadwood == 0
+            deadwood = Game.effective_deadwood_val(self.game.player)
+            self.knock_button.enabled = (deadwood <= 10)
+            self.gin_button.enabled = (deadwood == 0)
         else:
             self.knock_button.enabled = False
             self.gin_button.enabled = False
@@ -195,6 +230,27 @@ class App:
                 self.score_view.draw()
                 self.knock_button.draw(self.screen)
                 self.gin_button.draw(self.screen)
+                pygame.display.flip()
+
+            elif self.scene == "round_over":
+                for event in pygame.event.get():
+                    if event.type == pygame.QUIT:
+                        self.running = False
+                    elif event.type == pygame.MOUSEBUTTONDOWN and event.button == 1:
+                        mx, my = event.pos
+                        if self.play_again_button.is_clicked(mx, my):
+                            self._start_game(self.game.player.name)
+                        elif self.quit_button.is_clicked(mx, my):
+                            self.running = False
+
+
+                self._draw_table()
+                self.all_sprites.draw(self.screen)
+                self.pile_view.draw()
+                self.bin_view.draw(None)
+                self.score_view.draw()
+
+                self._draw_round_over()
                 pygame.display.flip()
 
             self.clock.tick(60)

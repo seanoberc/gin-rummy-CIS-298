@@ -14,7 +14,7 @@ class PileView:
         self.discard_x = window_width // 2 + 20
 
         # load card-back image for stockpile:
-        stock_image = pygame.image.load("assets/images/Blue_card_back.png").convert_alpha()
+        stock_image = pygame.image.load("deck_of_cards_blue.png").convert_alpha()
         self.stock_image = pygame.transform.smoothscale(stock_image, (CARD_WIDTH, CARD_HEIGHT))
 
     def draw(self):
