@@ -1,6 +1,7 @@
 from models.deck import Deck
 from models.player import Player
 from models.ai_player import cpu_take_turn
+from models.meld import is_valid_run_group, is_valid_set_group
 
 
 class Game:
@@ -50,16 +51,15 @@ class Game:
         self.phase = "draw"
         return True
 
-    def get_deadwood_val(deadwood_stack):
-        total = 0
-        # loop through dead stack then returns total points
-        for card in deadwood_stack:
-            total += card.get_value()
-        return total
-
     def handle_knock(self, opponent):
-        my_deadwood = self.player.deadwood_val()
-        opponent_deadwood = opponent.deadwood_val()
+        if self.turn != "human" or self.phase != "discard":
+            return ("not_allowed", 0)
+
+        my_deadwood = self.effective_deadwood_val(self.player)
+        opponent_deadwood = self.effective_deadwood_val(opponent)
+
+        if my_deadwood > 10:
+            return ("cannot_knock", 0)
 
         if my_deadwood < opponent_deadwood:  # KNOCK WIN player wins round and gains deadwood difference
             points = opponent_deadwood - my_deadwood
@@ -68,11 +68,35 @@ class Game:
 
         else:  # UNDERCUT LOSS opponent wins with 10-point bonus
             points = 10 + (my_deadwood - opponent_deadwood)
+            opponent.score += points
             return (opponent.name + " UNDERCUT WIN", points)
+
+    @staticmethod
+    def effective_deadwood_val(player):
+        total = sum(c.point_val for c in player.hand)
+
+        for g in player.groups["runs"]:
+            if not is_valid_run_group(g):
+                total += sum(c.point_val for c in g)
+
+        for g in player.groups["sets"]:
+            if not is_valid_set_group(g):
+                total += sum(c.point_val for c in g)
+
+        return total
 
     def handle_gin(self, opponent):
         # player declares Gin (scores 20 + opponent's deadwood)
-        opponent_deadwood = opponent.deadwood_val()
+        if self.turn != "human" or self.phase != "discard":
+            return ("not_allowed", 0)
+
+        if self.effective_deadwood_val(self.player) != 0:
+            return ("not_gin", 0)
+
+        opponent_deadwood = self.effective_deadwood_val(opponent)
         points = 20 + opponent_deadwood
         self.player.score += points
         return (self.player.name + " GIN WIN", points)
+
+
+

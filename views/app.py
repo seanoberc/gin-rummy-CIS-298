@@ -195,9 +195,9 @@ class App:
 
     def _update_buttons(self):
         if self.game.phase == "discard":
-            deadwood = self.game.player.deadwood_val()
-            self.knock_button.enabled = deadwood <= 10
-            self.gin_button.enabled = deadwood == 0
+            deadwood = Game.effective_deadwood_val(self.game.player)
+            self.knock_button.enabled = (deadwood <= 10)
+            self.gin_button.enabled = (deadwood == 0)
         else:
             self.knock_button.enabled = False
             self.gin_button.enabled = False
