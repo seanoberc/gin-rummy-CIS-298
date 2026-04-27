@@ -8,6 +8,7 @@ MARGIN = 20
 PANEL_WIDTH = 200
 PANEL_HEIGHT = 120
 
+
 class ScoreView:
     def __init__(self, screen, player, window_width):
         self.screen = screen

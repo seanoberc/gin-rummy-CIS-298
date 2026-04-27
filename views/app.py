@@ -67,7 +67,6 @@ class App:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 self.running = False
-
             # MOUSEBUTTON_DOWN
             elif event.type == pygame.MOUSEBUTTONDOWN and event.button == 1:
                 mx, my = event.pos
@@ -90,6 +89,7 @@ class App:
                             return
 
                 card = self.hand_view.card_at(mx, my)
+
                 if card:
                     self.dragging_card = card
                     self.drag_source = "hand"
@@ -155,7 +155,6 @@ class App:
                     else:
                         if self.drag_source == "bin":
                             self.game.player.move_to_hand(self.dragging_card)
-                            # self.all_sprites.add(self.dragging_card)
 
                         if self.dragging_card in self.game.player.hand:
                             old_index = self.game.player.hand.index(self.dragging_card)
@@ -191,8 +190,6 @@ class App:
         self.play_again_button.draw(self.screen)
         self.quit_button.draw(self.screen)
 
-
-
     def _update_buttons(self):
         if self.game.phase == "discard":
             deadwood = Game.effective_deadwood_val(self.game.player)
@@ -221,6 +218,16 @@ class App:
                 pygame.display.flip()
 
             elif self.scene == "game":
+                # if stock is empty when human is about to draw, end the round:
+                if self.game.stock_is_empty():
+                    result, points = self.game.handle_stock_empty(self.game.cpu)
+                    self.round_over_msg = result
+                    self.round_over_points = points
+                    self.scene = "round_over"
+                    self.dragging_card = None
+                    self.drag_source = None
+                    continue
+
                 self._handle_events()
                 self._update_buttons()
                 self._draw_table()
@@ -243,14 +250,13 @@ class App:
                         elif self.quit_button.is_clicked(mx, my):
                             self.running = False
 
-
                 self._draw_table()
                 self.all_sprites.draw(self.screen)
                 self.pile_view.draw()
                 self.bin_view.draw(None)
                 self.score_view.draw()
-
                 self._draw_round_over()
+
                 pygame.display.flip()
 
             self.clock.tick(60)

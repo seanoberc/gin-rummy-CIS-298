@@ -11,6 +11,7 @@ BIN_LABEL_COLOR = (240, 240, 240)
 CARD_SPACING = 30
 HIGHLIGHT_COLOR = (200, 200, 60)
 
+
 class BinView:
     def __init__(self, screen, player):
         self.screen = screen
@@ -62,9 +63,7 @@ class BinView:
         row_h = CARD_HEIGHT + pad_y
 
         for group in groups:
-
             group_w = CARD_WIDTH + max(0, len(group) - 1) * CARD_SPACING
-
 
             if x + group_w > bin_rect.right - pad_x:
                 x = bin_rect.x + pad_x
@@ -82,8 +81,8 @@ class BinView:
 
             x += group_w + 20
 
+    # returns the card along with its group name if the mouse hovers over bin card:
     def card_at(self, mx, my):
-        """Return the card and its group name if the mouse is over a bin card."""
         for group_name in ("runs", "sets"):
             for group in reversed(self.player.groups[group_name]):
                 for card in reversed(group):

@@ -4,6 +4,7 @@ HAND_SPACING = 90
 HAND_MARGIN_X = 20
 HAND_MARGIN_BOTTOM = 20
 
+
 class HandView:
     def __init__(self, window_height, player):
         self.player = player
@@ -20,7 +21,7 @@ class HandView:
         i = (mx - HAND_MARGIN_X) // HAND_SPACING
         return max(0, min(i, len(self.player.hand) - 1))
 
-    # return top-most card at given moust pos. (or return `None`):
+    # return top-most card at given mouse pos. (or return `None`):
     def card_at(self, mx, my):
         for card in reversed(self.player.hand):
             if card.rect.collidepoint(mx, my):

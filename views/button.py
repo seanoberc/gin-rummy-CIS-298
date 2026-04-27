@@ -6,6 +6,7 @@ BUTTON_DISABLED_COLOR = (60, 60, 60)
 TEXT_COLOR = (240, 240, 240)
 TEXT_DISABLED_COLOR = (120, 120, 120)
 
+
 class Button:
     def __init__(self, x, y, width, height, label):
         self.rect = pygame.Rect(x, y, width, height)

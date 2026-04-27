@@ -59,6 +59,21 @@ class Game:
     def stock_is_empty(self):
         return self.deck.cards_remaining() == 0 and self.phase == "draw" and self.turn == "human"
 
+    def handle_stock_empty(self, opponent):
+        my_deadwood = self.effective_deadwood_val(self.player)
+        opponent_deadwood = self.effective_deadwood_val(opponent)
+
+        if my_deadwood < opponent_deadwood:
+            points = opponent_deadwood - my_deadwood
+            self.player.scroe += points
+            return (self.player.name + "STOCK-OUT WIN", points)
+        elif opponent_deadwood < my_deadwood:
+            points = my_deadwood - opponent_deadwood
+            opponent.score += points
+            return (opponent.name + "STOCK-OUT WIN", points)
+        else:
+            return ("STOCK-OUT TIE", 0)
+
     def handle_knock(self, opponent):
         if self.turn != "human" or self.phase != "discard":
             return ("not_allowed", 0)

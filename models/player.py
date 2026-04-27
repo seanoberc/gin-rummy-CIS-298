@@ -1,5 +1,5 @@
 class Player:
-    def __init__(self, name, is_human = True):
+    def __init__(self, name, is_human=True):
         self.name = name
         self.hand = []
         self.score = 0
@@ -55,4 +55,3 @@ class Player:
 
     def deadwood_val(self):
         return sum(card.point_val for card in self.hand)
-    

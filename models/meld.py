@@ -8,14 +8,14 @@ RANK_ORDER = ["Ace", "2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Quee
 def is_valid_set_group(cards):
     return len(cards) in (3, 4) and len({c.rank for c in cards}) == 1
 
+
 def is_valid_run_group(cards):
     if len(cards) < 3:
         return False
     if len({c.suit for c in cards}) != 1:
         return False
     idx = sorted(RANK_ORDER.index(c.rank) for c in cards)
-    return all(idx[i] == idx[i-1] + 1 for i in range(1, len(idx)))
-
+    return all(idx[i] == idx[i - 1] + 1 for i in range(1, len(idx)))
 
 
 # in Gin Rummy, a valid set is a made of 3 or 4 cards of the same rank
@@ -35,7 +35,6 @@ def is_valid_run(groups):
     if isinstance(groups[0], (list, tuple)):
         return all(is_valid_run_group(g) for g in groups)
     return is_valid_run_group(groups)
-
 
 
 # checks whether a group of cards as either a run or a set, otherwise return False:

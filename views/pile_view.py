@@ -3,6 +3,7 @@ import pygame
 CARD_WIDTH = 80
 CARD_HEIGHT = 110
 
+
 class PileView:
     def __init__(self, screen, deck, window_width, window_height):
         self.screen = screen

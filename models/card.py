@@ -1,3 +1,4 @@
+import os
 import pygame
 from models import card_style
 from models.spritesheet import SpriteSheet
@@ -29,8 +30,6 @@ class Card(pygame.sprite.Sprite):
         self.rank = rank
         self.suit = suit
 
-        # path = self._image_path()
-        # image = pygame.image.load(path).convert_alpha()
         image = self._load_image()
         self.image = pygame.transform.smoothscale(image,
                                                   (CARD_WIDTH, CARD_HEIGHT))  # Pygame uses `Surface` for the canvas
@@ -48,7 +47,7 @@ class Card(pygame.sprite.Sprite):
     def _image_path(self):
         suit_name = SUIT_TO_FILE[self.suit]
         rank_name = RANK_TO_FILE[self.rank]
-        return f"black/{suit_name}_{rank_name}_black.png"
+        return os.path.join(card_style.SPRITES_DIR, f"{suit_name}_{rank_name}_black.png")
 
     def __repr__(self):
         return f"{self.rank} of {self.suit}"
