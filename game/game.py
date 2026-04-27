@@ -96,3 +96,24 @@ class Game:
         points = 20 + opponent_deadwood
         self.player.score += points
         return (self.player.name + " GIN WIN", points)
+
+
+
+    def reset_round(self):
+        #reshuffle deck
+        self.deck = Deck()
+        
+        #clear hands of player and cpu
+        self.player.hand = []
+        self.player.groups = {"runs": [], "sets": []}
+        
+        self.cpu.hand = []
+        self.cpu.groups = {"runs": [], "sets": []}
+        
+        #deal cards to player and cpu
+        self.player.set_hand(self.deck.deal(10))
+        self.cpu.set_hand(self.deck.deal(10))
+        
+        #start the round and draw a card
+        self.phase = "draw"
+        self.deck.discard(self.deck.draw())
