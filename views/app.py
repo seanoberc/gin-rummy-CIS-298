@@ -1,6 +1,7 @@
 import sys
 import pygame
 from game.game import Game
+from game.game_demo import DemoGame
 from views.hand_view import HandView
 from views.pile_view import PileView
 from views.bin_view import BinView
@@ -47,8 +48,8 @@ class App:
         self.drag_offset_x = 0
         self.drag_offset_y = 0
 
-    def _start_game(self, player_name):
-        self.game = Game(player_name)
+    def _start_game(self, player_name, demo_mode=False):
+        self.game = DemoGame(player_name) if demo_mode else Game(player_name)
         self.all_sprites = pygame.sprite.Group()
         self.hand_view = HandView(WINDOW_HEIGHT, self.game.player)
         self.pile_view = PileView(self.screen, self.game.deck, WINDOW_WIDTH, WINDOW_HEIGHT)
@@ -209,6 +210,8 @@ class App:
                         result = self.menu_view.handle_event(event)
                         if result == "start":
                             self._start_game(self.menu_view.player_name.strip())
+                        elif result == "demo":
+                            self._start_game(self.menu_view.player_name.strip(), demo_mode=True)
                         elif result == "exit":
                             self.running = False
                         elif result == "customize":
