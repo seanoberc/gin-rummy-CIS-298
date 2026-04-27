@@ -3,12 +3,24 @@
   "WorkspaceRootPath": "C:\\Users\\daved\\source\\repos\\gin-rummy-CIS-298\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\daved\\source\\repos\\gin-rummy-CIS-298\\views\\app.py||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:views\\app.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\daved\\source\\repos\\gin-rummy-CIS-298\\main.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:main.py||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\daved\\source\\repos\\gin-rummy-CIS-298\\models\\deck.py||{8B382828-6202-11D1-8870-0000F87579D2}|",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:models\\deck.py||{8B382828-6202-11D1-8870-0000F87579D2}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\daved\\source\\repos\\gin-rummy-CIS-298\\models\\player.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:models\\player.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\daved\\source\\repos\\gin-rummy-CIS-298\\game\\game.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:game\\game.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\daved\\source\\repos\\gin-rummy-CIS-298\\views\\app.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:views\\app.py||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\daved\\source\\repos\\gin-rummy-CIS-298\\models\\hand.py||{8B382828-6202-11D1-8870-0000F87579D2}",
@@ -17,14 +29,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\daved\\source\\repos\\gin-rummy-CIS-298\\models\\meld.py||{8B382828-6202-11D1-8870-0000F87579D2}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:models\\meld.py||{8B382828-6202-11D1-8870-0000F87579D2}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\daved\\source\\repos\\gin-rummy-CIS-298\\models\\player.py||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:models\\player.py||{8B382828-6202-11D1-8870-0000F87579D2}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\daved\\source\\repos\\gin-rummy-CIS-298\\main.py||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:main.py||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\daved\\source\\repos\\gin-rummy-CIS-298\\models\\ai_player.py||{8B382828-6202-11D1-8870-0000F87579D2}",
@@ -37,10 +41,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\daved\\source\\repos\\gin-rummy-CIS-298\\models\\__init__.py||{8B382828-6202-11D1-8870-0000F87579D2}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:models\\__init__.py||{8B382828-6202-11D1-8870-0000F87579D2}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\daved\\source\\repos\\gin-rummy-CIS-298\\game\\game.py||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:game\\game.py||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\daved\\source\\repos\\gin-rummy-CIS-298\\models\\card_style.py||{8B382828-6202-11D1-8870-0000F87579D2}",
@@ -126,7 +126,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 16,
+          "SelectedChildIndex": 18,
           "Children": [
             {
               "$type": "Bookmark",
@@ -155,8 +155,7 @@
               "RelativeToolTip": "tests\\test_hand.py",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
-              "WhenOpened": "2026-04-26T22:02:28.843Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-26T22:02:28.843Z"
             },
             {
               "$type": "Document",
@@ -168,8 +167,7 @@
               "RelativeToolTip": "tests\\test_scorer.py",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
-              "WhenOpened": "2026-04-26T22:02:28.159Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-26T22:02:28.159Z"
             },
             {
               "$type": "Document",
@@ -181,8 +179,7 @@
               "RelativeToolTip": "requirements.txt",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
-              "WhenOpened": "2026-04-26T22:02:25.69Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-26T22:02:25.69Z"
             },
             {
               "$type": "Document",
@@ -194,8 +191,7 @@
               "RelativeToolTip": "README.md",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
-              "WhenOpened": "2026-04-26T22:02:24.841Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-26T22:02:24.841Z"
             },
             {
               "$type": "Document",
@@ -207,8 +203,7 @@
               "RelativeToolTip": ".idea\\vcs.xml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003576|",
-              "WhenOpened": "2026-04-26T22:01:15.588Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-26T22:01:15.588Z"
             },
             {
               "$type": "Document",
@@ -220,12 +215,11 @@
               "RelativeToolTip": "models\\spritesheet.py",
               "ViewState": "AgIAABIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
-              "WhenOpened": "2026-04-26T22:00:38.682Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-26T22:00:38.682Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "__init__.py",
               "DocumentMoniker": "C:\\Users\\daved\\source\\repos\\gin-rummy-CIS-298\\models\\__init__.py",
               "RelativeDocumentMoniker": "models\\__init__.py",
@@ -233,12 +227,11 @@
               "RelativeToolTip": "models\\__init__.py",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
-              "WhenOpened": "2026-04-26T19:22:48.424Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-26T19:22:48.424Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 2,
               "Title": "player.py",
               "DocumentMoniker": "C:\\Users\\daved\\source\\repos\\gin-rummy-CIS-298\\models\\player.py",
               "RelativeDocumentMoniker": "models\\player.py",
@@ -251,7 +244,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 6,
               "Title": "meld.py",
               "DocumentMoniker": "C:\\Users\\daved\\source\\repos\\gin-rummy-CIS-298\\models\\meld.py",
               "RelativeDocumentMoniker": "models\\meld.py",
@@ -259,12 +252,11 @@
               "RelativeToolTip": "models\\meld.py",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
-              "WhenOpened": "2026-04-26T19:31:41.631Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-26T19:31:41.631Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 5,
               "Title": "hand.py",
               "DocumentMoniker": "C:\\Users\\daved\\source\\repos\\gin-rummy-CIS-298\\models\\hand.py",
               "RelativeDocumentMoniker": "models\\hand.py",
@@ -272,8 +264,7 @@
               "RelativeToolTip": "models\\hand.py",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
-              "WhenOpened": "2026-04-26T20:44:39.524Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-26T20:44:39.524Z"
             },
             {
               "$type": "Document",
@@ -283,7 +274,7 @@
               "RelativeDocumentMoniker": "models\\deck.py",
               "ToolTip": "C:\\Users\\daved\\source\\repos\\gin-rummy-CIS-298\\models\\deck.py",
               "RelativeToolTip": "models\\deck.py",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAsAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
               "WhenOpened": "2026-04-26T19:34:43.288Z",
               "EditorCaption": ""
@@ -298,12 +289,11 @@
               "RelativeToolTip": "models\\card_style.py",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
-              "WhenOpened": "2026-04-26T22:00:47.162Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-26T22:00:47.162Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "card.py",
               "DocumentMoniker": "C:\\Users\\daved\\source\\repos\\gin-rummy-CIS-298\\models\\card.py",
               "RelativeDocumentMoniker": "models\\card.py",
@@ -311,38 +301,37 @@
               "RelativeToolTip": "models\\card.py",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
-              "WhenOpened": "2026-04-26T21:33:22.194Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-26T21:33:22.194Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 3,
               "Title": "game.py",
               "DocumentMoniker": "C:\\Users\\daved\\source\\repos\\gin-rummy-CIS-298\\game\\game.py",
               "RelativeDocumentMoniker": "game\\game.py",
               "ToolTip": "C:\\Users\\daved\\source\\repos\\gin-rummy-CIS-298\\game\\game.py",
               "RelativeToolTip": "game\\game.py",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAWAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
               "WhenOpened": "2026-04-26T18:44:30.172Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 4,
               "Title": "app.py",
               "DocumentMoniker": "C:\\Users\\daved\\source\\repos\\gin-rummy-CIS-298\\views\\app.py",
               "RelativeDocumentMoniker": "views\\app.py",
               "ToolTip": "C:\\Users\\daved\\source\\repos\\gin-rummy-CIS-298\\views\\app.py",
               "RelativeToolTip": "views\\app.py",
-              "ViewState": "AgIAAEQAAAAAAAAAAAArwGcAAABKAAAAAAAAAA==",
+              "ViewState": "AgIAAFAAAAAAAAAAAAArwGcAAABKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
               "WhenOpened": "2026-04-26T19:19:06.449Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "ai_player.py",
               "DocumentMoniker": "C:\\Users\\daved\\source\\repos\\gin-rummy-CIS-298\\models\\ai_player.py",
               "RelativeDocumentMoniker": "models\\ai_player.py",
@@ -350,12 +339,11 @@
               "RelativeToolTip": "models\\ai_player.py",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
-              "WhenOpened": "2026-04-26T18:43:52.829Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-26T18:43:52.829Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 0,
               "Title": "main.py",
               "DocumentMoniker": "C:\\Users\\daved\\source\\repos\\gin-rummy-CIS-298\\main.py",
               "RelativeDocumentMoniker": "main.py",
@@ -376,8 +364,7 @@
               "RelativeToolTip": ".idea\\modules.xml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003576|",
-              "WhenOpened": "2026-04-26T22:01:14.973Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-26T22:01:14.973Z"
             },
             {
               "$type": "Document",
@@ -389,8 +376,7 @@
               "RelativeToolTip": ".idea\\misc.xml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003576|",
-              "WhenOpened": "2026-04-26T22:01:14.402Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-26T22:01:14.402Z"
             },
             {
               "$type": "Document",
@@ -402,8 +388,7 @@
               "RelativeToolTip": ".idea\\gin-rummy-CIS-298.iml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2026-04-26T22:01:13.531Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-26T22:01:13.531Z"
             },
             {
               "$type": "Document",
@@ -415,8 +400,7 @@
               "RelativeToolTip": ".idea\\.gitignore",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2026-04-26T22:01:12.611Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-26T22:01:12.611Z"
             },
             {
               "$type": "Document",
@@ -428,8 +412,7 @@
               "RelativeToolTip": "game\\scorer.py",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
-              "WhenOpened": "2026-04-26T22:00:59.267Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-26T22:00:59.267Z"
             },
             {
               "$type": "Document",
@@ -441,8 +424,7 @@
               "RelativeToolTip": "views\\score_view.py",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
-              "WhenOpened": "2026-04-26T21:33:38.135Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-26T21:33:38.135Z"
             },
             {
               "$type": "Document",
@@ -454,8 +436,7 @@
               "RelativeToolTip": "views\\hand_view.py",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
-              "WhenOpened": "2026-04-26T21:33:39.961Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-26T21:33:39.961Z"
             },
             {
               "$type": "Document",
@@ -467,8 +448,7 @@
               "RelativeToolTip": "views\\customize_view.py",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
-              "WhenOpened": "2026-04-26T21:33:40.479Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-26T21:33:40.479Z"
             },
             {
               "$type": "Document",
@@ -480,8 +460,7 @@
               "RelativeToolTip": "views\\pile_view.py",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
-              "WhenOpened": "2026-04-26T21:33:32.932Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-26T21:33:32.932Z"
             },
             {
               "$type": "Document",
@@ -493,8 +472,7 @@
               "RelativeToolTip": "views\\button.py",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
-              "WhenOpened": "2026-04-26T21:33:41.011Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-26T21:33:41.011Z"
             },
             {
               "$type": "Document",
@@ -506,8 +484,7 @@
               "RelativeToolTip": "views\\bin_view.py",
               "ViewState": "AgIAAFIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
-              "WhenOpened": "2026-04-26T21:33:41.608Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-26T21:33:41.608Z"
             }
           ]
         }

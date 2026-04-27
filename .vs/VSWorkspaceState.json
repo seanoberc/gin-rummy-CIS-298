@@ -1,12 +1,11 @@
 {
   "ExpandedNodes": [
     "",
-    "\\.idea\\inspectionProfiles",
     "\\game",
     "\\models",
     "\\tests",
     "\\views"
   ],
-  "SelectedNode": "\\views\\app.py",
+  "SelectedNode": "\\main.py",
   "PreviewInSolutionExplorer": false
 }

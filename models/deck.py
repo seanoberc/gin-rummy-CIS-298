@@ -21,12 +21,21 @@ class Deck:
     def shuffle(self):
         random.shuffle(self.cards)
 
-    def draw(self):  # pops a card from the end of the list (becomes "top" card)
-        def draw(self): # pops a card from the end of the list
-        # Check if the deck is out of cards first
-        if len(self.cards) == 0: 
-            result, points = self.game.handle_knock(self.game.cpu)
-            
+    # def draw(self):  # pops a card from the end of the list           
+    #     return self.cards.pop()
+
+    def draw(self):  # pops a card from the end of the list          
+        if len(self.cards) == 0:
+            if len(self.discard_pile) > 1:
+                self.cards = self.discard_pile[:-1]
+                
+                self.discard_pile = [self.discard_pile[-1]]
+                
+
+                self.shuffle()
+                print("The discard pile was reshuffled into the deck!")
+                
+                
         return self.cards.pop()
 
     def deal(self, n):
