@@ -3,135 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="2e52d4e6-8936-465a-b08b-cf391b971c8c" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/Blue_card_back.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/sprites/Blue_card_back.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/classic/card_backs.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/sprites/classic/card_backs.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/classic/card_backs_8x.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/sprites/classic/card_backs_8x.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/classic/card_faces.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/sprites/classic/card_faces.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/classic/card_faces_8x.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/sprites/classic/card_faces_8x.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/sprites/Clovers_10_black.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/sprites/black/Clovers_10_black.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/sprites/Clovers_2_black.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/sprites/black/Clovers_2_black.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/sprites/Clovers_3_black.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/sprites/black/Clovers_3_black.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/sprites/Clovers_4_black.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/sprites/black/Clovers_4_black.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/sprites/Clovers_5_black.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/sprites/black/Clovers_5_black.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/sprites/Clovers_6_black.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/sprites/black/Clovers_6_black.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/sprites/Clovers_7_black.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/sprites/black/Clovers_7_black.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/sprites/Clovers_8_black.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/sprites/black/Clovers_8_black.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/sprites/Clovers_9_black.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/sprites/black/Clovers_9_black.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/sprites/Clovers_A_black.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/sprites/black/Clovers_A_black.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/sprites/Clovers_Jack_black.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/sprites/black/Clovers_Jack_black.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/sprites/Clovers_King_black.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/sprites/black/Clovers_King_black.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/sprites/Clovers_Queen_black.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/sprites/black/Clovers_Queen_black.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/sprites/Hearts_10_black.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/sprites/black/Hearts_10_black.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/sprites/Hearts_2_black.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/sprites/black/Hearts_2_black.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/sprites/Hearts_3_black.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/sprites/black/Hearts_3_black.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/sprites/Hearts_4_black.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/sprites/black/Hearts_4_black.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/sprites/Hearts_5_black.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/sprites/black/Hearts_5_black.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/sprites/Hearts_6_black.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/sprites/black/Hearts_6_black.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/sprites/Hearts_7_black.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/sprites/black/Hearts_7_black.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/sprites/Hearts_8_black.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/sprites/black/Hearts_8_black.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/sprites/Hearts_9_black.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/sprites/black/Hearts_9_black.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/sprites/Hearts_A_black.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/sprites/black/Hearts_A_black.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/sprites/Hearts_Jack_black.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/sprites/black/Hearts_Jack_black.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/sprites/Hearts_King_black.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/sprites/black/Hearts_King_black.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/sprites/Hearts_Queen_black.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/sprites/black/Hearts_Queen_black.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/sprites/Pikes_10_black.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/sprites/black/Pikes_10_black.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/sprites/Pikes_2_black.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/sprites/black/Pikes_2_black.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/sprites/Pikes_3_black.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/sprites/black/Pikes_3_black.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/sprites/Pikes_4_black.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/sprites/black/Pikes_4_black.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/sprites/Pikes_5_black.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/sprites/black/Pikes_5_black.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/sprites/Pikes_6_black.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/sprites/black/Pikes_6_black.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/sprites/Pikes_7_black.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/sprites/black/Pikes_7_black.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/sprites/Pikes_8_black.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/sprites/black/Pikes_8_black.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/sprites/Pikes_9_black.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/sprites/black/Pikes_9_black.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/sprites/Pikes_A_black.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/sprites/black/Pikes_A_black.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/sprites/Pikes_Jack_black.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/sprites/black/Pikes_Jack_black.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/sprites/Pikes_King_black.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/sprites/black/Pikes_King_black.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/sprites/Pikes_Queen_black.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/sprites/black/Pikes_Queen_black.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/sprites/Tiles_10_black.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/sprites/black/Tiles_10_black.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/sprites/Tiles_2_black.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/sprites/black/Tiles_2_black.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/sprites/Tiles_3_black.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/sprites/black/Tiles_3_black.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/sprites/Tiles_4_black.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/sprites/black/Tiles_4_black.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/sprites/Tiles_5_black.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/sprites/black/Tiles_5_black.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/sprites/Tiles_6_black.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/sprites/black/Tiles_6_black.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/sprites/Tiles_7_black.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/sprites/black/Tiles_7_black.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/sprites/Tiles_8_black.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/sprites/black/Tiles_8_black.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/sprites/Tiles_9_black.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/sprites/black/Tiles_9_black.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/sprites/Tiles_A_black.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/sprites/black/Tiles_A_black.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/sprites/Tiles_Jack_black.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/sprites/black/Tiles_Jack_black.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/sprites/Tiles_King_black.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/sprites/black/Tiles_King_black.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/sprites/Tiles_Queen_black.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/sprites/black/Tiles_Queen_black.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/black/Clovers_10_black.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/black/Clovers_2_black.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/black/Clovers_3_black.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/black/Clovers_4_black.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/black/Clovers_5_black.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/black/Clovers_6_black.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/black/Clovers_7_black.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/black/Clovers_8_black.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/black/Clovers_9_black.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/black/Clovers_A_black.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/black/Clovers_Jack_black.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/black/Clovers_King_black.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/black/Clovers_Queen_black.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/black/Hearts_10_black.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/black/Hearts_2_black.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/black/Hearts_3_black.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/black/Hearts_4_black.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/black/Hearts_5_black.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/black/Hearts_6_black.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/black/Hearts_7_black.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/black/Hearts_8_black.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/black/Hearts_9_black.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/black/Hearts_A_black.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/black/Hearts_Jack_black.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/black/Hearts_King_black.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/black/Hearts_Queen_black.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/black/Pikes_10_black.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/black/Pikes_2_black.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/black/Pikes_3_black.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/black/Pikes_4_black.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/black/Pikes_5_black.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/black/Pikes_6_black.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/black/Pikes_7_black.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/black/Pikes_8_black.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/black/Pikes_9_black.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/black/Pikes_A_black.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/black/Pikes_Jack_black.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/black/Pikes_King_black.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/black/Pikes_Queen_black.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/black/Tiles_10_black.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/black/Tiles_2_black.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/black/Tiles_3_black.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/black/Tiles_4_black.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/black/Tiles_5_black.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/black/Tiles_6_black.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/black/Tiles_7_black.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/black/Tiles_8_black.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/black/Tiles_9_black.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/black/Tiles_A_black.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/black/Tiles_Jack_black.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/black/Tiles_King_black.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/black/Tiles_Queen_black.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/game/game.py" beforeDir="false" afterPath="$PROJECT_DIR$/game/game.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/game/scorer.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/ai_player.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/ai_player.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/card.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/card.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/card_sprite.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/card_sprite.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/card_style.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/card_style.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/hand.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/hand.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/meld.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/meld.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/player.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/player.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/spritesheet.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/spritesheet.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/views/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/bin_view.py" beforeDir="false" afterPath="$PROJECT_DIR$/views/bin_view.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/button.py" beforeDir="false" afterPath="$PROJECT_DIR$/views/button.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/customize_view.py" beforeDir="false" afterPath="$PROJECT_DIR$/views/customize_view.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/hand_view.py" beforeDir="false" afterPath="$PROJECT_DIR$/views/hand_view.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/menu_view.py" beforeDir="false" afterPath="$PROJECT_DIR$/views/menu_view.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/pile_view.py" beforeDir="false" afterPath="$PROJECT_DIR$/views/pile_view.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/score_view.py" beforeDir="false" afterPath="$PROJECT_DIR$/views/score_view.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -173,7 +44,7 @@
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
     "ai.playground.ignore.import.keys.banner.in.settings": "true",
     "codeWithMe.voiceChat.enabledByDefault": "false",
-    "git-widget-placeholder": "sean",
+    "git-widget-placeholder": "master",
     "last_opened_file_path": "/Users/seanoberc/Development/GitHub/gin-rummy-CIS-298/assets/images/sprites",
     "nodejs_package_manager_path": "npm",
     "settings.editor.selected.configurable": "preferences.editor",
@@ -266,6 +137,6 @@
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/gin_rummy_CIS_298$main.coverage" NAME="main Coverage Results" MODIFIED="1777293800277" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/gin_rummy_CIS_298$main.coverage" NAME="main Coverage Results" MODIFIED="1777294070750" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
