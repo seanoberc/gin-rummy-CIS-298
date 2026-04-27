@@ -1,4 +1,5 @@
 import pygame
+from pathlib import Path
 
 """
 `subsurface()`
@@ -54,8 +55,8 @@ BACK_NAMES = ["red", "green", "blue", "peach"]
 
 class SpriteSheet:
     def __init__(self):
-        self.faces = pygame.image.load("assets/images/classic/card_faces.png").convert_alpha()
-        self.backs = pygame.image.load("assets/images/classic/card_backs.png").convert_alpha()
+        self.faces = pygame.image.load("assets/images/sprites/classic/card_faces.png").convert_alpha()
+        self.backs = pygame.image.load("assets/images/sprites/classic/card_backs.png").convert_alpha()
 
     # slice a single card face from the "faces" sprite sheet:
     def get_card_face(self, rank, suit):
