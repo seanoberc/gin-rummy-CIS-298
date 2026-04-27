@@ -29,7 +29,6 @@ class App:
         self.play_again_button = Button(WINDOW_WIDTH // 2 - 140, WINDOW_HEIGHT // 2 + 40, 120, 45, "Play again")
         self.quit_button = Button(WINDOW_WIDTH // 2 + 20, WINDOW_HEIGHT // 2 + 40, 120, 45, "Quit")
 
-
         # pre-game menu view:
         self.menu_view = MenuView(self.screen, WINDOW_WIDTH, WINDOW_HEIGHT)
 
@@ -109,7 +108,7 @@ class App:
                     result, points = self.game.handle_knock(self.game.cpu)
                     self.round_over_msg = result
                     self.round_over_points = points
-                    self._check_win_condition()
+                    self.scene = "round_over"
                     self.dragging_card = None
                     self.drag_source = None
                     return
@@ -118,7 +117,7 @@ class App:
                     result, points = self.game.handle_gin(self.game.cpu)
                     self.round_over_msg = result
                     self.round_over_points = points
-                    self._check_win_condition()
+                    self.scene = "round_over"
                     self.dragging_card = None
                     self.drag_source = None
                     return
@@ -196,65 +195,12 @@ class App:
 
     def _update_buttons(self):
         if self.game.phase == "discard":
-            deadwood = self.game.player.deadwood_val()
-            self.knock_button.enabled = deadwood <= 10
-            self.gin_button.enabled = deadwood == 0
+            deadwood = Game.effective_deadwood_val(self.game.player)
+            self.knock_button.enabled = (deadwood <= 10)
+            self.gin_button.enabled = (deadwood == 0)
         else:
             self.knock_button.enabled = False
             self.gin_button.enabled = False
-
-    def _start_next_round(self):
-        #starting over
-        self.game.reset_round()
-        
-        #redo sprites now that game starting new round
-        self.all_sprites = pygame.sprite.Group()
-        self.hand_view = HandView(WINDOW_HEIGHT, self.game.player)
-        self.pile_view = PileView(self.screen, self.game.deck, WINDOW_WIDTH, WINDOW_HEIGHT)
-        self.bin_view = BinView(self.screen, self.game.player)
-        self.score_view = ScoreView(self.screen, self.game.player, WINDOW_WIDTH)
-        
-        for card in self.game.player.hand:
-            self.all_sprites.add(card)
-        self.hand_view.reposition()
-        
-        #resume the game
-        self.scene = "game"
-
-
-    def _check_win_condition(self):
-        #check if either player has reached 100 points
-        if self.game.player.score >= 100:
-            self.round_over_msg = f"{self.game.player.name} WINS THE GAME!"
-            self.scene = "game_over"
-        elif self.game.cpu.score >= 100:
-            self.round_over_msg = f"{self.game.cpu.name} WINS THE GAME!"
-            self.scene = "game_over"
-        else:
-            self.scene = "round_over"
-
-    def _draw_game_over(self):
-        overlay = pygame.Surface((WINDOW_WIDTH, WINDOW_HEIGHT), pygame.SRCALPHA)
-        overlay.fill((0, 0, 0, 200))
-        self.screen.blit(overlay, (0, 0))
-
-        panel = pygame.Rect(0, 0, 520, 260)
-        panel.center = (WINDOW_WIDTH // 2, WINDOW_HEIGHT // 2)
-        pygame.draw.rect(self.screen, (30, 30, 30), panel, border_radius=12)
-        pygame.draw.rect(self.screen, (212, 175, 55), panel, 4, border_radius=12)
-
-        font = pygame.font.SysFont(None, 48)
-        small = pygame.font.SysFont(None, 32)
-        title = font.render("VICTORY", True, (212, 175, 55))
-        
-        msg = small.render(self.round_over_msg, True, (240, 240, 240))
-
-        self.screen.blit(title, (panel.x + 30, panel.y + 30))
-        self.screen.blit(msg, (panel.x + 30, panel.y + 95))
-
-        self.play_again_button.draw(self.screen)
-        self.quit_button.draw(self.screen)
-
 
     def run(self):
         while self.running:
@@ -287,30 +233,16 @@ class App:
                 pygame.display.flip()
 
             elif self.scene == "round_over":
-                self.play_again_button.enabled = True
-                self.quit_button.enabled = True
                 for event in pygame.event.get():
                     if event.type == pygame.QUIT:
                         self.running = False
                     elif event.type == pygame.MOUSEBUTTONDOWN and event.button == 1:
                         mx, my = event.pos
                         if self.play_again_button.is_clicked(mx, my):
-                            self._start_next_round()
+                            self._start_game(self.game.player.name)
                         elif self.quit_button.is_clicked(mx, my):
                             self.running = False
 
-            elif self.scene == "game_over":
-                for event in pygame.event.get():
-                    self.play_again_button.enabled = True
-                    self.quit_button.enabled = True
-                    if event.type == pygame.QUIT:
-                        self.running = False
-                    elif event.type == pygame.MOUSEBUTTONDOWN and event.button == 1:
-                        mx, my = event.pos
-                        if self.play_again_button.is_clicked(mx, my):
-                            self._start_game(self.game.player.name) 
-                        elif self.quit_button.is_clicked(mx, my):
-                            self.running = False
 
                 self._draw_table()
                 self.all_sprites.draw(self.screen)
@@ -318,7 +250,7 @@ class App:
                 self.bin_view.draw(None)
                 self.score_view.draw()
 
-                self._draw_game_over()
+                self._draw_round_over()
                 pygame.display.flip()
 
             self.clock.tick(60)
