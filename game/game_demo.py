@@ -52,11 +52,21 @@ class DemoGame(Game):
         self.deck.cards.extend(self.player.hand)
         self.deck.cards.extend(self.cpu.hand)
         self.deck.cards.extend(self.deck.discard_pile)
+
+        self.player.hand = []
+        self.cpu.hand = []
         self.deck.discard_pile = []
 
         human_cards = self._take_cards(self.HUMAN_HAND)
         cpu_cards = self._take_cards(self.CPU_HAND)
         discard_card = self._take_card(*self.STARTING_DISCARD)  # cool: `*` Python operator cuts tuple into separate args
+
+        self.player.set_hand(human_cards)
+        self.cpu.set_hand(cpu_cards)
+        self.deck.discard(discard_card)
+
+        if auto_group:
+            self._auto_group_human_melds()
 
     def _take_cards(self, specs):
         return [self._take_card(rank, suit) for rank, suit in specs]

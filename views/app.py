@@ -49,7 +49,11 @@ class App:
         self.drag_offset_y = 0
 
     def _start_game(self, player_name, demo_mode=False):
-        self.game = DemoGame(player_name) if demo_mode else Game(player_name)
+        if demo_mode:
+            self.game = DemoGame(player_name)
+        else:
+            self.game = Game(player_name)
+
         self.all_sprites = pygame.sprite.Group()
         self.hand_view = HandView(WINDOW_HEIGHT, self.game.player)
         self.pile_view = PileView(self.screen, self.game.deck, WINDOW_WIDTH, WINDOW_HEIGHT)
@@ -61,6 +65,7 @@ class App:
 
         for card in self.game.player.hand:
             self.all_sprites.add(card)
+
         self.hand_view.reposition()
         self.scene = "game"
 
@@ -209,7 +214,9 @@ class App:
                     if not self.customize_view.handle_event(event):
                         result = self.menu_view.handle_event(event)
                         if result == "start":
-                            self._start_game(self.menu_view.player_name.strip())
+                            player_name = self.menu_view.player_name.strip()
+                            demo_mode = player_name.lower() == "demo"
+                            self._start_game(player_name, demo_mode=demo_mode)
                         elif result == "demo":
                             self._start_game(self.menu_view.player_name.strip(), demo_mode=True)
                         elif result == "exit":
