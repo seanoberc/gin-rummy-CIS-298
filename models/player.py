@@ -1,4 +1,3 @@
-
 class Player:
     def __init__(self, name, is_human = True):
         self.name = name
@@ -11,7 +10,11 @@ class Player:
         }
 
     def set_hand(self, cards):
-        self.hand = cards
+        self.hand = list(cards)
+        self.groups = {
+            "runs": [],
+            "sets": []
+        }
 
     def add_card(self, card):
         self.hand.append(card)
@@ -23,23 +26,34 @@ class Player:
         return len(self.hand)
 
     def move_to_group(self, card, group_name):
-        # removes the card from player's hand or any other group it might be in:
         if card in self.hand:
-            self.hand.remove(card) # if the card is already in the hand, remove it
+            self.hand.remove(card)
 
-        # remove from any group it's currently in
-        for name in ("runs", "sets"):
-            if card in self.groups[name]:
-                self.groups[name].remove(card)
+        if group_name not in ("runs", "sets"):
+            raise ValueError("group_name must be 'runs' or 'sets'")
 
-        self.groups[group_name].append(card) # appends card to target group
+        for g in ("runs", "sets"):
+            for group in self.groups[g]:
+                if card in group:
+                    group.remove(card)
+
+        for g in ("runs", "sets"):
+            self.groups[g] = [grp for grp in self.groups[g] if grp]
+
+        self.groups[group_name].append([card])
 
     def move_to_hand(self, card):
-        for name in ("runs", "sets"):
-            if card in self.groups[name]:
-                self.groups[name].remove(card)
+        for g in ("runs", "sets"):
+            for group in self.groups[g]:
+                if card in group:
+                    group.remove(card)
+        for g in ("runs", "sets"):
+            self.groups[g] = [grp for grp in self.groups[g] if grp]
+
         if card not in self.hand:
-                self.hand.append(card)
+            self.hand.append(card)
 
     def deadwood_val(self):
         return sum(card.point_val for card in self.hand)
+    
+
