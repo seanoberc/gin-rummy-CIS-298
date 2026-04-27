@@ -29,12 +29,13 @@ class Game:
         return card
 
     def draw_from_discard(self):
-        if self.phase != "draw" or self.turn != "draw":
+        if self.turn != "human" or self.phase != "draw":
             return None
         card = self.deck.take_discard()
         if card is None:
             return None
         self.player.add_card(card)
+        self.phase = "discard"
         return card
 
     def discard_card(self, card):
@@ -49,20 +50,29 @@ class Game:
         self.phase = "draw"
         return True
 
-    def handle_knock(self):
-        player_deadwood = self.player.deadwood_val()
-        opponent_deadwood = 0  # TODO: placholder
+    def get_deadwood_val(deadwood_stack):
+        total = 0
+        # loop through dead stack then returns total points
+        for card in deadwood_stack:
+            total += card.get_value()
+        return total
 
-        if player_deadwood < opponent_deadwood:  # player wins round
-            points = opponent_deadwood - player_deadwood
+    def handle_knock(self, opponent):
+        my_deadwood = self.player.deadwood_val()
+        opponent_deadwood = opponent.deadwood_val()
+
+        if my_deadwood < opponent_deadwood:  # KNOCK WIN player wins round and gains deadwood difference
+            points = opponent_deadwood - my_deadwood
             self.player.score += points
-            return ("player_wins", points)
-        else:  # opponent wins with 10-point bonus
-            points = 10 + (player_deadwood - opponent_deadwood)
-            return ("opponent_wins", points)
+            return (self.player.name + " KNOCK WIN", points)
 
-    def handle_gin(self):  # player declares Gin (scores 20 + opponent's deadwood)
-        opponent_deadwood = 0
+        else:  # UNDERCUT LOSS opponent wins with 10-point bonus
+            points = 10 + (my_deadwood - opponent_deadwood)
+            return (opponent.name + " UNDERCUT WIN", points)
+
+    def handle_gin(self, opponent):
+        # player declares Gin (scores 20 + opponent's deadwood)
+        opponent_deadwood = opponent.deadwood_val()
         points = 20 + opponent_deadwood
         self.player.score += points
-        return ("gin", points)
+        return (self.player.name + " GIN WIN", points)

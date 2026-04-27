@@ -21,7 +21,10 @@ class Deck:
     def shuffle(self):
         random.shuffle(self.cards)
 
-    def draw(self):  # pops a card from the end of the list (becomes "top" card)
+    def draw(self):
+        # pops a card from the end of the list (becomes "top" card)
+        if len(self.cards) == 0:
+            result, points = self.game.handle_knock(self.game.cpu)
         return self.cards.pop()
 
     def deal(self, n):
