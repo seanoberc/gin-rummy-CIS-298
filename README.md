@@ -1,5 +1,9 @@
 # Gin Rummy (CIS 298 Project)
 
+<sub>
+    [ChatGPT prompt: "format these git commits into Markdown for a README file"]
+</sub>
+
 ## Overview
 
 This project is a digital implementation of the card game **Gin Rummy**.  
